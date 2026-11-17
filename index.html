@@ -96,12 +96,19 @@ body{background-color:#120c0b;background-image:radial-gradient(ellipse 70% 55% a
 .lang button{font:400 13px "Bungee";min-width:44px;min-height:36px;padding:0 10px;border-radius:4px;border:1.5px solid #3fbf7a;background:#0d2a1e;color:#7fe3a8;cursor:pointer;box-shadow:0 0 12px -4px #3fbf7a}
 .lang button[aria-pressed="true"]{background:#3fbf7a;color:#0d2a1e}
 .lang button:focus-visible{outline:2px solid #e8b04a;outline-offset:2px}
+.lang .snd{min-width:44px;padding:0 9px;margin-right:4px;display:grid;place-items:center}
+.lang .snd svg,.ctl .pp svg{width:18px;height:18px;shape-rendering:crispEdges;display:block}
+.lang .snd .w{opacity:0}.lang .snd[aria-pressed="true"] .w{opacity:1}.lang .snd[aria-pressed="true"] .x{opacity:0}
+.lang .snd[aria-pressed="true"]{background:#0d2a1e;color:#7fe3a8;box-shadow:0 0 14px -2px #3fbf7a}
+.lang .snd[aria-pressed="false"]{color:#4f8f6a;box-shadow:none}
+.ctl .row{display:flex;gap:8px;align-items:flex-start}.ctl .row .cast{flex:1}
+.ctl .pp{flex:none;width:44px;padding:0;display:grid;place-items:center}
 .hd{padding-top:28px}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="lang" role="group" aria-label="Language / ภาษา"><button type="button" data-l="th" aria-pressed="true">TH</button><button type="button" data-l="en" aria-pressed="false">EN</button></div>
+  <div class="lang" role="group" aria-label="Language / ภาษา"><button type="button" class="snd" id="snd" aria-pressed="false" data-i18n-aria="music" aria-label="เพลงคลอ"><svg viewBox="0 0 9 9" aria-hidden="true"><path fill="currentColor" d="M1 3h2v3H1zM3 2h1v5H3zM4 1h1v7H4z"/><path class="w" fill="currentColor" d="M6 3h1v3H6zM7 2h1v1H7zM7 6h1v1H7zM8 3h1v3H8z"/><path class="x" fill="currentColor" d="M6 3h1v1H6zM8 3h1v1H8zM7 4h1v1H7zM6 5h1v1H6zM8 5h1v1H8z"/></svg></button><button type="button" data-l="th" aria-pressed="true">TH</button><button type="button" data-l="en" aria-pressed="false">EN</button></div>
   <header class="hd">
     <div class="zh" lang="zh-Hant">美琳</div>
     <h1>MEILIN</h1>
@@ -113,7 +120,7 @@ body{background-color:#120c0b;background-image:radial-gradient(ellipse 70% 55% a
       <span class="ts">2026.11.17 · 09:40</span>
       <figcaption class="subs"><span lang="zh-Hant">今晚，同你飲。</span><span data-i18n="sub">คืนนี้ ดื่มกับเธอ</span></figcaption>
     </div>
-    <div class="ctl"><span data-i18n="hint">แตะตัวละครหรือปุ่มเพื่อเปลี่ยนท่า</span><div class="cast" id="cast"></div><button type="button" id="pp" class="pp" aria-pressed="false">⏸ หยุดอนิเมชัน</button></div>
+    <div class="ctl"><span data-i18n="hint">แตะตัวละครหรือปุ่มเพื่อเปลี่ยนท่า</span><div class="row"><div class="cast" id="cast"></div><button type="button" id="pp" class="pp" aria-pressed="false" aria-label="หยุดอนิเมชัน"></button></div></div>
   </figure>
 
   <h2><i>連結</i>Links</h2>
@@ -131,14 +138,14 @@ body{background-color:#120c0b;background-image:radial-gradient(ellipse 70% 55% a
 <script>
 const I18N={
  th:{scene:'เลานจ์บาร์เซี่ยงไฮ้ยามดึกแบบพิกเซลอาร์ตมุมไอโซเมตริก: พื้นหินอ่อนลายตารางขาวดำ ผนังไม้วอลนัทขอบทอง บาร์หนังแดงกับตู้ขวดซุ้มโค้งไฟแดง ฉากฉลุจีนแสงเขียว เวทีม่านกำมะหยี่แดงกรอบทองกับโคมแดง ต้นปาล์มและเฟิร์น คู่รักเต้นสวิงกลางห้องใต้สปอตไลต์ บาร์เทนเดอร์หลังบาร์ นักร้องกับนักเปียโนบนเวที ป้าย 美琳酒吧 และ 今晚飲咩',
-  sub:'คืนนี้ ดื่มกับเธอ',hint:'แตะตัวละครหรือปุ่มเพื่อเปลี่ยนท่า',pause:'⏸ หยุดอนิเมชัน',play:'▶ เล่นอนิเมชัน',
-  c_b5:'บาร์เทนเดอร์',c_p3:'นักเปียโน',c_s1:'นักร้อง',c_couple:'คู่รัก',
+  sub:'คืนนี้ ดื่มกับเธอ',hint:'แตะตัวละครหรือปุ่มเพื่อเปลี่ยนท่า',pause:'หยุดอนิเมชัน',play:'เล่นอนิเมชัน',music:'เพลงคลอ',
+  c_b5:'บาร์เทนเดอร์',c_p3:'นักเปียโน',c_s1:'นักร้อง',c_couple:'คู่รัก',c_meana:'เหม่ยหลิน',c_bf:'เขา',
   l_pf:'รวมผลงานดีไซน์และระบบที่ทำ',l_gh:'โค้ดและโปรเจกต์เว็บ',p_bar:'ควิซ "วันนี้ดื่มอะไรดี?" ในบาร์พิกเซล',
   p_ft:'เว็บดูดวง',p_ftd:'ไพ่ทาโรต์ + โหราศาสตร์ ฉากท้องฟ้าจริง',p_rf:'เล่าสถานการณ์ แล้วเว็บช่วยวิเคราะห์',soon:'SOON',
   email:'อีเมล',copy:'คัดลอก',copied:'คัดลอกแล้ว ✓',copyfail:'คัดลอกเองนะ',foot:'ลิงก์ในหน้านี้ยังเป็นตัวอย่าง'},
  en:{scene:'A late-night Shanghai lounge in isometric pixel art: black-and-white marble checker floor, gold-trimmed walnut walls, a red leather bar with arched red-lit bottle cabinets, a Chinese lattice screen glowing green, a gold-framed stage with red velvet curtains and red lanterns, palms and ferns. Two lovers swing-dance under a spotlight, a bartender works the bar, a singer and a pianist play on stage. Neon signs read 美琳酒吧 and 今晚飲咩',
-  sub:'Tonight, drinking with you.',hint:'Tap a character or a button to change the move',pause:'⏸ Pause animation',play:'▶ Play animation',
-  c_b5:'Bartender',c_p3:'Pianist',c_s1:'Singer',c_couple:'Lovers',
+  sub:'Tonight, drinking with you.',hint:'Tap a character or a button to change the move',pause:'Pause animation',play:'Play animation',music:'Background music',
+  c_b5:'Bartender',c_p3:'Pianist',c_s1:'Singer',c_couple:'Lovers',c_meana:'Meilin',c_bf:'Him',
   l_pf:'Design work and systems I’ve built',l_gh:'Code and web projects',p_bar:'A "What should I drink tonight?" quiz in a pixel bar',
   p_ft:'Fortune Site',p_ftd:'Tarot + astrology under a real night sky',p_rf:'Describe a situation and the site helps you read it',soon:'SOON',
   email:'Email',copy:'Copy',copied:'Copied ✓',copyfail:'Copy it manually',foot:'Links on this page are placeholders for now'}};
@@ -149,12 +156,12 @@ function setLang(l){LANG=l;try{localStorage.setItem('lang',l)}catch(e){}
  document.documentElement.lang=l;
  document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=tr(e.dataset.i18n));
  document.querySelectorAll('[data-i18n-aria]').forEach(e=>e.setAttribute('aria-label',tr(e.dataset.i18nAria)));
- document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+ document.querySelectorAll('.lang button[data-l]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
  onLang.forEach(f=>f());}
 </script>
 <script>
 {
-const D={"IMG":{"bgN":"assets/scene/room.png","bgA":"assets/scene/room-dim-a.png","bgB":"assets/scene/room-dim-b.png","fg":"assets/scene/piano-front.png"},"SP":{"b5/shake":{"n":17,"d":[160,140,85,85,85,85,85,85,85,85,85,85,85,85,200,160,450],"w":44,"src":"assets/sprites/b5-shake.png"},"b5/pour":{"n":11,"d":[300,200,200,160,160,160,160,180,200,260,500],"w":44,"src":"assets/sprites/b5-pour.png"},"b5/wink":{"n":10,"d":[500,300,300,300,300,350,350,500,110,450],"w":44,"src":"assets/sprites/b5-wink.png"},"s1/sing":{"n":10,"d":[220,220,220,220,220,220,220,220,220,220],"w":44,"src":"assets/sprites/s1-sing.png"},"s1/highnote":{"n":13,"d":[220,180,180,160,160,160,160,160,160,200,450,110,300],"w":44,"src":"assets/sprites/s1-highnote.png"},"s1/sway":{"n":8,"d":[320,320,320,320,320,320,320,320],"w":44,"src":"assets/sprites/s1-sway.png"},"p3/play":{"n":12,"d":[130,130,130,130,130,130,130,130,130,130,130,130],"w":44,"src":"assets/sprites/p3-play.png"},"p3/flourish":{"n":9,"d":[120,120,120,160,300,100,160,200,500],"w":44,"src":"assets/sprites/p3-flourish.png"},"p3/glasses":{"n":11,"d":[500,150,150,250,200,200,150,160,160,600,500],"w":44,"src":"assets/sprites/p3-glasses.png"},"couple/toast":{"n":8,"d":[260,220,300,300,240,500,300,500],"w":80,"src":"assets/sprites/couple-toast.png"},"couple/rose":{"n":7,"d":[400,250,400,300,300,600,500],"w":80,"src":"assets/sprites/couple-rose.png"},"couple/hands":{"n":8,"d":[300,300,300,300,300,300,300,300],"w":80,"src":"assets/sprites/couple-hands.png"},"couple/lean":{"n":7,"d":[400,300,700,700,700,110,500],"w":80,"src":"assets/sprites/couple-lean.png"},"couple/swing":{"n":16,"d":[170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170],"w":80,"src":"assets/sprites/couple-swing.png"}},"CAST":[{"id":"b5","name":"บาร์เทนเดอร์","zh":"綠絨","pos":[117,74],"clip":50,"seq":[["shake",2],["pour",1],["wink",1]]},{"id":"p3","name":"นักเปียโน","zh":"絲絨","pos":[50,90],"clip":33,"seq":[["play",3],["flourish",1],["play",2],["glasses",1]],"fg":1},{"id":"s1","name":"นักร้อง","zh":"金嗓子","pos":[5,100],"clip":44,"seq":[["sing",2],["highnote",1],["sing",1],["sway",2]]},{"id":"couple","name":"คู่รัก","zh":"一對","pos":[73,123],"clip":44,"seq":[["swing",3],["toast",2],["hands",3],["rose",2],["lean",2]],"spot":1}],"JUKE":[62,96]};
+const D={"IMG":{"bgN":"assets/scene/room.png","bgA":"assets/scene/room-dim-a.png","bgB":"assets/scene/room-dim-b.png","fg":"assets/scene/piano-front.png"},"SP":{"b5/shake":{"n":17,"d":[160,140,85,85,85,85,85,85,85,85,85,85,85,85,200,160,450],"w":44,"src":"assets/sprites/b5-shake.png"},"b5/pour":{"n":11,"d":[300,200,200,160,160,160,160,180,200,260,500],"w":44,"src":"assets/sprites/b5-pour.png"},"b5/wink":{"n":10,"d":[500,300,300,300,300,350,350,500,110,450],"w":44,"src":"assets/sprites/b5-wink.png"},"s1/sing":{"n":10,"d":[220,220,220,220,220,220,220,220,220,220],"w":44,"src":"assets/sprites/s1-sing.png"},"s1/highnote":{"n":13,"d":[220,180,180,160,160,160,160,160,160,200,450,110,300],"w":44,"src":"assets/sprites/s1-highnote.png"},"s1/sway":{"n":8,"d":[320,320,320,320,320,320,320,320],"w":44,"src":"assets/sprites/s1-sway.png"},"p3/play":{"n":12,"d":[130,130,130,130,130,130,130,130,130,130,130,130],"w":44,"src":"assets/sprites/p3-play.png"},"p3/flourish":{"n":9,"d":[120,120,120,160,300,100,160,200,500],"w":44,"src":"assets/sprites/p3-flourish.png"},"p3/glasses":{"n":11,"d":[500,150,150,250,200,200,150,160,160,600,500],"w":44,"src":"assets/sprites/p3-glasses.png"},"couple/toast":{"n":8,"d":[260,220,300,300,240,500,300,500],"w":80,"src":"assets/sprites/couple-toast.png"},"couple/rose":{"n":7,"d":[400,250,400,300,300,600,500],"w":80,"src":"assets/sprites/couple-rose.png"},"couple/hands":{"n":8,"d":[300,300,300,300,300,300,300,300],"w":80,"src":"assets/sprites/couple-hands.png"},"couple/lean":{"n":7,"d":[400,300,700,700,700,110,500],"w":80,"src":"assets/sprites/couple-lean.png"},"couple/swing":{"n":16,"d":[170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170],"w":80,"src":"assets/sprites/couple-swing.png"},"meana/idle":{"n":11,"d":[500,450,450,110,350,450,450,110,90,110,400],"w":44,"src":"assets/sprites/meana-idle.png"},"meana/wave":{"n":12,"d":[120,150,150,150,150,150,150,200,160,500,110,400],"w":44,"src":"assets/sprites/meana-wave.png"},"meana/toast":{"n":12,"d":[220,180,260,260,240,200,220,380,380,220,500,400],"w":44,"src":"assets/sprites/meana-toast.png"},"meana/dance":{"n":9,"d":[150,150,150,150,150,150,160,160,150],"w":44,"src":"assets/sprites/meana-dance.png"},"meana/laugh":{"n":12,"d":[110,110,110,110,110,110,110,110,110,110,110,110],"w":44,"src":"assets/sprites/meana-laugh.png"},"bf/idle":{"n":8,"d":[600,500,500,140,140,600,500,700],"w":44,"src":"assets/sprites/bf-idle.png"},"bf/peek":{"n":16,"d":[400,150,150,250,200,500,350,200,600,220,500,150,200,250,150,300],"w":44,"src":"assets/sprites/bf-peek.png"},"bf/toast":{"n":9,"d":[240,220,300,300,220,220,500,220,700],"w":44,"src":"assets/sprites/bf-toast.png"},"bf/rose":{"n":9,"d":[300,200,250,350,350,350,300,300,500],"w":44,"src":"assets/sprites/bf-rose.png"},"bf/snap":{"n":12,"d":[200,200,200,200,200,200,200,200,200,200,200,200],"w":44,"src":"assets/sprites/bf-snap.png"}},"CAST":[{"id":"b5","name":"บาร์เทนเดอร์","zh":"綠絨","pos":[117,74],"clip":50,"seq":[["shake",2],["pour",1],["wink",1]]},{"id":"p3","name":"นักเปียโน","zh":"絲絨","pos":[50,90],"clip":33,"seq":[["play",3],["flourish",1],["play",2],["glasses",1]],"fg":1},{"id":"s1","name":"นักร้อง","zh":"金嗓子","pos":[5,100],"clip":44,"seq":[["sing",2],["highnote",1],["sing",1],["sway",2]]},{"id":"couple","name":"คู่รัก","zh":"一對","pos":[73,123],"clip":44,"seq":[["swing",3],["toast",2],["hands",3],["rose",2],["lean",2]],"spot":1,"duo":1},{"id":"meana","zh":"美琳","pos":[74,123],"clip":44,"spot":1,"solo":1,"seq":[["idle",1],["wave",1],["toast",1],["dance",2],["laugh",1]]},{"id":"bf","zh":"他","pos":[100,123],"clip":44,"spot":1,"solo":1,"seq":[["idle",1],["peek",1],["snap",2],["toast",1],["rose",1]]}],"JUKE":[62,96]};
 const W=200,H=210,cv=document.getElementById('px'),g=cv.getContext('2d');g.imageSmoothingEnabled=false;
 const load=src=>{const im=new Image();im.src=src;return im};
 const BG={N:load(D.IMG.bgN),A:load(D.IMG.bgA),B:load(D.IMG.bgB)},FG=load(D.IMG.fg);
@@ -163,6 +170,11 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;let paused=RM;
 const st=D.CAST.map(c=>({c,s:0,loop:0,f:0,t:0}));
 const cur=p=>SP[p.c.id+'/'+p.c.seq[p.s][0]];
 const setAct=(p,s)=>{p.s=(s+p.c.seq.length)%p.c.seq.length;p.loop=0;p.f=0;p.t=0;};
+// the lovers either dance together (duo) or split into two solo dancers for a while
+let solo=false,soloLeft=0;const SOLO_MS=12000;
+const live=p=>p.c.duo?!solo:p.c.solo?solo:true;
+const goSolo=()=>{if(!solo)st.forEach(p=>{if(p.c.solo)setAct(p,0)});solo=true;soloLeft=SOLO_MS;};
+const goDuo=()=>{solo=false;};
 // stepped, dithered vignette + three grain frames, made once at pixel size
 const mk=()=>{const c=document.createElement('canvas');c.width=W;c.height=H;return c};
 const vig=mk();{const x=vig.getContext('2d'),d=x.createImageData(W,H),B=[0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5];
@@ -185,24 +197,31 @@ const draw=()=>{
   const tA=T%4000,tB=(T+5000)%6000,bg=(tA>3600&&tA<3760)?BG.A:(tB>5450&&tB<5650)?BG.B:BG.N;
   g.drawImage(bg,0,0);
   for(let i=0;i<3;i++){const k=((T/3000)+i/3)%1;drawNote(i,D.JUKE[0]+Math.round(k*7)+i,D.JUKE[1]-Math.round(k*22),k<.2?k/.2:1-(k-.2)/.8);}
-  st.forEach(p=>{const a=cur(p);if(p.c.spot)g.drawImage(dark,0,0);if(!a.im.complete)return;const h=p.c.clip;g.drawImage(a.im,p.f*a.w,0,a.w,h,p.c.pos[0],p.c.pos[1],a.w,h);if(p.c.fg)g.drawImage(FG,0,0);
-    if(p.c.spot){g.globalCompositeOperation='lighter';g.drawImage(beam,0,0);g.globalCompositeOperation='source-over';}});
+  const vis=st.filter(live),spots=vis.filter(p=>p.c.spot);
+  vis.forEach(p=>{const a=cur(p);if(p===spots[0])g.drawImage(dark,0,0);if(a.im.complete){const h=p.c.clip;g.drawImage(a.im,p.f*a.w,0,a.w,h,p.c.pos[0],p.c.pos[1],a.w,h);}if(p.c.fg)g.drawImage(FG,0,0);
+    if(p===spots[spots.length-1]){g.globalCompositeOperation='lighter';g.drawImage(beam,0,0);g.globalCompositeOperation='source-over';}});
   g.drawImage(vig,0,0);g.drawImage(grain[Math.floor(T/110)%3],0,0);
   g.fillStyle='#050403';g.fillRect(0,0,W,17);g.fillRect(0,193,W,H-193);
 };
 const tick=now=>{const dt=Math.min(now-last,250);last=now;
-  if(!paused){T+=dt;st.forEach(p=>{const a=cur(p);p.t+=dt;while(p.t>=a.d[p.f]){p.t-=a.d[p.f];p.f++;if(p.f>=a.n){p.f=0;if(++p.loop>=p.c.seq[p.s][1]){setAct(p,p.s+1);break;}}}});}
+  if(!paused){T+=dt;if(solo&&(soloLeft-=dt)<=0)goDuo();
+    st.forEach(p=>{if(!live(p))return;const a=cur(p);p.t+=dt;while(p.t>=a.d[p.f]){p.t-=a.d[p.f];p.f++;if(p.f>=a.n){p.f=0;if(++p.loop>=p.c.seq[p.s][1]){setAct(p,p.s+1);if(p.c.duo&&p.s===0)goSolo();break;}}}});}
   draw();requestAnimationFrame(tick);};
 Promise.all([...Object.values(BG),FG,...Object.values(SP).map(a=>a.im)].map(im=>im.decode().catch(()=>{}))).then(()=>{draw();requestAnimationFrame(tick)});
 // buttons + tapping the canvas both change a character's pose
 const bar=document.getElementById('cast');
 const castBtns=()=>{bar.innerHTML=st.map((p,i)=>`<button type="button" data-i="${i}"><b>${p.c.zh}</b> ${tr('c_'+p.c.id)}</button>`).join('');};castBtns();onLang.push(castBtns);
-const next=i=>{setAct(st[i],st[i].s+1);if(paused)draw();};
+const next=i=>{const p=st[i];
+  if(p.c.solo){if(!solo)goSolo();else soloLeft=SOLO_MS;setAct(p,p.s+1);}
+  else if(p.c.duo){if(solo)goDuo();else setAct(p,p.s+1);}
+  else setAct(p,p.s+1);if(paused)draw();};
 bar.addEventListener('click',e=>{const b=e.target.closest('button');if(b)next(+b.dataset.i)});
 cv.addEventListener('click',e=>{const r=cv.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*W,y=(e.clientY-r.top)/r.height*H;
-  for(let i=st.length-1;i>=0;i--){const p=st[i],a=cur(p),[px,py]=p.c.pos;if(x>=px+6&&x<px+a.w-6&&y>=py+4&&y<py+p.c.clip){next(i);return;}}});
+  for(let i=st.length-1;i>=0;i--){const p=st[i],a=cur(p),[px,py]=p.c.pos;if(!live(p))continue;if(x>=px+6&&x<px+a.w-6&&y>=py+4&&y<py+p.c.clip){next(i);return;}}});
 const pp=document.getElementById('pp');
-const lab=()=>{pp.textContent=tr(paused?'play':'pause');pp.setAttribute('aria-pressed',paused);};lab();onLang.push(lab);
+const IC={pause:'<svg viewBox="0 0 8 8" aria-hidden="true"><path fill="currentColor" d="M2 1h1.5v6H2zM4.5 1H6v6H4.5z"/></svg>',
+ play:'<svg viewBox="0 0 8 8" aria-hidden="true"><path fill="currentColor" d="M2 1h1v6H2zM3 2h1v4H3zM4 3h1v2H4zM5 3.5h1v1H5z"/></svg>'};
+const lab=()=>{const k=paused?'play':'pause';pp.innerHTML=IC[k];pp.setAttribute('aria-label',tr(k));pp.title=tr(k);pp.setAttribute('aria-pressed',paused);};lab();onLang.push(lab);
 pp.addEventListener('click',()=>{paused=!paused;lab();});
 }
 </script>
@@ -233,9 +252,151 @@ const renderLinks=()=>{document.getElementById('links').innerHTML=links.map(item
 document.getElementById('projects').innerHTML=projects.map(item).join('');};renderLinks();onLang.push(renderLinks);
 const cp=document.getElementById('cp');
 cp.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.getElementById('em').textContent);cp.textContent=tr('copied')}catch(e){cp.textContent=tr('copyfail')}setTimeout(()=>cp.textContent=tr('copy'),1800);});
-document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+document.querySelectorAll('.lang button[data-l]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
 setLang(LANG);
 }
+</script>
+<script>
+/* MEILIN lounge music — three original songs synthesised live with Web Audio (no audio files). */
+const MUS=(()=>{
+const SEMI={C:0,D:2,E:4,F:5,G:7,A:9,B:11};
+const hz=n=>{const m=/^([A-G])(#|b)?(-?\d)$/.exec(n);const s=SEMI[m[1]]+(m[2]==='#'?1:m[2]==='b'?-1:0);return 440*Math.pow(2,((+m[3]+1)*12+s-69)/12);};
+// "E5:.5 r:1 | ..." -> [[beat,freq,dur]]
+const line=(str,at=0)=>{let b=at;const o=[];str.replace(/\|/g,' ').trim().split(/\s+/).forEach(tk=>{const[n,d]=tk.split(':');if(n!=='r')o.push([b,hz(n),+d]);b+=+d;});return o;};
+
+/* ---------- songs ---------- */
+function song1(){ // 霓虹夜 Neon Night — slow smoky ballad, muted horn over Rhodes
+  const V={Am9:['G3 B3 C4 E4','A2','E2'],Dm9:['F3 A3 C4 E4','D2','A2'],G13:['F3 A3 B3 E4','G2','D2'],Cmaj9:['E3 G3 B3 D4','C2','G2'],
+    Fmaj7:['A3 C4 E4 G4','F2','C3'],Bm7b5:['A3 D4 F4','B2','F2'],E7b9:['G#3 D4 F4','E2','B2'],F7:['A3 C4 Eb4','F2','C3']};
+  const C=[['Am9'],['Dm9'],['G13'],['Cmaj9'],['Fmaj7'],['Bm7b5','E7b9'],['Am9'],['Am9'],['Am9'],['Dm9'],['G13'],['Cmaj9'],['Fmaj7'],['Bm7b5','E7b9'],['Am9','F7'],['E7b9']];
+  const ev=[];const A=(t,v,f,d,g)=>ev.push({t,v,f,d,g});
+  C.forEach((cs,i)=>{const b=i*4,len=4/cs.length;cs.forEach((c,j)=>{const[vo,r,f]=V[c],t=b+j*len;
+    vo.split(' ').forEach(n=>A(t,'rhodes',hz(n),len-.05,.075));
+    if(len===4){A(t,'bass',hz(r),1.9,.34);A(t+2,'bass',hz(f),1.9,.3);}else A(t,'bass',hz(r),1.9,.34);});
+    for(let k=0;k<4;k++){A(b+k,'brush',0,.3,k%2?.11:.07);A(b+k,'ride',0,.5,k%2?.03:.04);}
+    A(b+1.5,'ride',0,.3,.02);A(b+3.5,'ride',0,.3,.02);A(b+1,'rim',0,.1,.05);A(b+3,'rim',0,.1,.05);A(b,'kick',0,.3,.22);});
+  line(`r:1 E5:.5 G5:.5 A5:1.5 G5:.5 | E5:1 D5:.5 C5:.5 D5:2 | r:.5 B4:.5 D5:.5 E5:.5 G5:1 F5:1 | E5:3 r:1 |
+        r:.5 A4:.5 C5:.5 E5:.5 A5:1 G5:1 | F5:1 E5:1 D5:1 G#4:1 | B4:.5 C5:.5 A4:3 | r:4 |
+        r:1 E5:.5 G5:.5 A5:1 C6:1 | B5:.5 A5:.5 G5:.5 E5:.5 D5:2 | r:.5 D5:.5 E5:.5 G5:.5 B5:1 A5:1 | G5:1.5 E5:.5 D5:2 |
+        C5:.5 D5:.5 E5:.5 G5:.5 A5:2 | G5:1 F5:1 E5:1 D5:.5 B4:.5 | C5:1 B4:.5 A4:2.5 | r:4`).forEach(([t,f,d])=>A(t,'horn',f,d,.2));
+  line('A5:.5 G5:.5 E5:.5 D5:.5 C5:.5 A4:.5 G4:1',29).forEach(([t,f,d])=>A(t,'piano',f,d,.16));
+  line('F5:.5 E5:.5 D5:.5 B4:.5 G#4:.5 F4:.5 E4:1',61).forEach(([t,f,d])=>A(t,'piano',f,d,.16));
+  return {bpm:66,swing:.64,beats:64,ev};
+}
+function song2(){ // 旗袍搖擺 Qipao Swing — 1930s Shanghai foxtrot, clarinet + pipa
+  const V={D6:['F#3 A3 B3 D4','D2','A2'],Bm7:['A3 B3 D4 F#4','B1','F#2'],Gmaj7:['F#3 G3 B3 D4','G2','D2'],A7:['G3 A3 C#4 E4','A2','E2'],
+    Gm6:['G3 Bb3 D4 E4','G2','D2'],DF:['F#3 A3 D4','F#2','A2'],B7:['A3 B3 D#4 F#4','B1','F#2'],Em7:['G3 B3 D4 E4','E2','B2']};
+  const C=['D6','D6','Bm7','Bm7','Gmaj7','A7','D6','D6','Gmaj7','Gm6','DF','B7','Em7','A7','D6','A7'];
+  const ev=[];const A=(t,v,f,d,g)=>ev.push({t,v,f,d,g});
+  C.forEach((c,i)=>{const b=i*4,[vo,r,f]=V[c];
+    A(b,'bass',hz(r),.9,.38);A(b+2,'bass',hz(f),.9,.33);
+    [1,3].forEach(k=>vo.split(' ').forEach(n=>A(b+k,'piano',hz(n),.35,.075)));
+    A(b,'kick',0,.3,.2);A(b+2,'kick',0,.3,.15);A(b+1,'brush',0,.25,.17);A(b+3,'brush',0,.25,.17);
+    for(let k=0;k<8;k++)A(b+k/2,'hat',0,.1,k%2?.03:.05);});
+  line(`F#5:1.5 E5:.5 D5:1 B4:1 | D5:1 E5:.5 F#5:.5 A5:2 | B5:1.5 A5:.5 F#5:1 E5:1 | F#5:3 r:1 |
+        D5:1 E5:.5 D5:.5 B4:1 A4:1 | B4:.5 C#5:.5 E5:1 A5:1 G5:1 | F#5:2 E5:1 D5:1 | D5:2.5 r:1.5 |
+        B5:1 A5:.5 B5:.5 D6:2 | Bb5:1 A5:.5 G5:.5 E5:2 | F#5:1 A5:1 D5:1 E5:1 | D#5:1 F#5:1 B5:2 |
+        E5:1.5 G5:.5 B5:1 A5:1 | G5:1 E5:.5 C#5:.5 A4:2 | D5:1 E5:.5 F#5:.5 A5:1 F#5:1 | E5:2 r:2`).forEach(([t,f,d])=>A(t,'clar',f,d,.2));
+  const trem=(t,a,b2)=>{for(let k=0;k<4;k++)A(t+k*.125,'pluck',hz(a),.12,.11);for(let k=0;k<4;k++)A(t+.5+k*.125,'pluck',hz(b2),.12,.11);A(t+1,'pluck',hz(b2),.5,.13);};
+  trem(15,'A5','F#5');trem(30,'B5','A5');trem(46,'D6','B5');trem(62,'C#6','A5');
+  return {bpm:112,swing:.6,beats:64,ev};
+}
+function song3(){ // 今晚 Tonight — slow lo-fi bossa, Rhodes + plucked melody, vinyl crackle
+  const V={Dm9:['F3 A3 C4 E4','D2','A2'],G13:['F3 A3 B3 E4','G2','D2'],Cmaj9:['E3 G3 B3 D4','C2','G2'],A7b13:['G3 C#4 F4','A2','E2'],
+    Bbmaj7:['A3 D4 F4','Bb1','F2'],Am7:['G3 C4 E4','A2','E2'],Gm9:['F3 A3 Bb3 D4','G2','D2'],A7b9:['G3 Bb3 C#4 E4','A2','E2']};
+  const P=['Dm9','G13','Cmaj9','A7b13','Bbmaj7','Am7','Gm9','A7b9'],C=[...P,...P];
+  const ev=[];const A=(t,v,f,d,g)=>ev.push({t,v,f,d,g});
+  C.forEach((c,i)=>{const b=i*4,[vo,r,f]=V[c];
+    [[0,r,1.5],[1.5,f,.5],[2,f,1.5],[3.5,r,.5]].forEach(([o,n,d])=>A(b+o,'bass',hz(n),d-.05,.34));
+    [[0,1],[1.5,.5],[2.5,1],[3.5,.5]].forEach(([o,d])=>vo.split(' ').forEach(n=>A(b+o,'rhodes',hz(n),d,.06)));
+    (i%2?[1,2.5]:[0,1.5,3]).forEach(o=>A(b+o,'rim',0,.1,.09));
+    A(b,'kick',0,.3,.22);A(b+2.5,'kick',0,.3,.14);
+    for(let k=0;k<8;k++)A(b+k/2,'shaker',0,.1,k%2?.035:.06);});
+  line(`r:.5 A4:.5 C5:.5 D5:1 E5:.5 F5:1 | E5:1.5 D5:.5 r:2 | r:.5 G5:.5 E5:.5 D5:.5 E5:2 | C#5:1 E5:1 A4:2 |
+        r:.5 F5:.5 A5:.5 G5:.5 F5:1 D5:1 | E5:1.5 C5:.5 A4:2 | r:.5 Bb4:.5 D5:.5 F5:.5 A5:1 G5:1 | E5:2 C#5:2 |
+        r:.5 A4:.5 C5:.5 D5:1 E5:.5 F5:1 | E5:1.5 D5:.5 r:2 | r:.5 G5:.5 E5:.5 D5:.5 E5:2 | C#5:1 E5:1 A4:2 |
+        A5:1 G5:.5 F5:.5 D5:2 | C5:1 E5:1 G5:2 | F5:1.5 E5:.5 D5:1 A4:1 | D5:3 r:1`).forEach(([t,f,d])=>A(t,'pluck',f,d,.26));
+  return {bpm:84,swing:0,beats:64,ev,crackle:1};
+}
+const SONGS=[song1(),song2(),song3()];
+SONGS.forEach(s=>{s.loops=Math.ceil(90/(s.beats*60/s.bpm));s.ev.forEach(e=>{const fl=Math.floor(e.t),fr=e.t-fl;if(s.swing&&Math.abs(fr-.5)<1e-6)e.t=fl+s.swing;});s.ev.sort((a,b)=>a.t-b.t);});
+
+/* ---------- audio graph ---------- */
+let ctx,master,rev,noise,crk,bus,timer,idx=0,loopT=0,cur=-1,on=false,vol=.5,loops=0;
+function impulse(sec,decay){const n=ctx.sampleRate*sec,b=ctx.createBuffer(2,n,ctx.sampleRate);for(let c=0;c<2;c++){const d=b.getChannelData(c);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,decay);}return b;}
+function setup(){
+  ctx=new (window.AudioContext||window.webkitAudioContext)();
+  const comp=ctx.createDynamicsCompressor();comp.threshold.value=-20;comp.ratio.value=3;comp.connect(ctx.destination);
+  const tone=ctx.createBiquadFilter();tone.type='lowpass';tone.frequency.value=7000;tone.connect(comp);
+  master=ctx.createGain();master.gain.value=0;master.connect(tone);
+  rev=ctx.createConvolver();rev.buffer=impulse(2.6,2.8);const rg=ctx.createGain();rg.gain.value=.5;rev.connect(rg);rg.connect(master);
+  noise=ctx.createBuffer(1,ctx.sampleRate*2,ctx.sampleRate);const nd=noise.getChannelData(0);for(let i=0;i<nd.length;i++)nd[i]=Math.random()*2-1;
+  crk=ctx.createBuffer(1,ctx.sampleRate*4,ctx.sampleRate);const cd=crk.getChannelData(0);
+  for(let i=0;i<cd.length;i++)cd[i]=(Math.random()*2-1)*.012+(Math.random()<.0006?(Math.random()*2-1)*.7:0);
+}
+const mkBus=()=>{const d=ctx.createGain(),s=ctx.createGain();d.connect(master);s.connect(rev);return{d,s,nodes:[]};};
+function out(node,send){node.connect(bus.d);if(send){const g=ctx.createGain();g.gain.value=send;node.connect(g);g.connect(bus.s);}}
+function osc(type,f,t,end){const o=ctx.createOscillator();o.type=type;o.frequency.value=f;o.start(t);o.stop(end);return o;}
+function nz(t,end){const s=ctx.createBufferSource();s.buffer=noise;s.start(t,Math.random()*1.5);s.stop(end);return s;}
+function gain(v){const g=ctx.createGain();g.gain.value=v;return g;}
+function filt(type,f,q=1){const b=ctx.createBiquadFilter();b.type=type;b.frequency.value=f;b.Q.value=q;return b;}
+function perc(src,t,peak,tc,chain){const g=gain(0);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(peak,t+.003);g.gain.setTargetAtTime(0,t+.003,tc);let n=src;chain.forEach(c=>{n.connect(c);n=c;});n.connect(g);return g;}
+const V={
+  piano(t,f,d,g){const end=t+d+2,e=gain(0);e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g,t+.004);e.gain.setTargetAtTime(g*.35,t+.004,.25);e.gain.setTargetAtTime(0,t+d,.18);
+    const lp=filt('lowpass',3200);osc('triangle',f,t,end).connect(lp);const h=gain(.25);osc('sine',f*2,t,end).connect(h);h.connect(lp);lp.connect(e);out(e,.3);},
+  rhodes(t,f,d,g){const end=t+d+2,c=osc('sine',f,t,end),m=osc('sine',f,t,end),mi=gain(f*1.1);mi.gain.setTargetAtTime(f*.15,t,.25);m.connect(mi);mi.connect(c.frequency);
+    const e=gain(0);e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g,t+.01);e.gain.setTargetAtTime(g*.55,t+.01,.6);e.gain.setTargetAtTime(0,t+d,.3);c.connect(e);out(e,.35);},
+  bass(t,f,d,g){const end=t+d+1,lp=filt('lowpass',650,1.2),e=gain(0);e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g,t+.012);e.gain.setTargetAtTime(g*.45,t+.012,.22);e.gain.setTargetAtTime(0,t+d,.05);
+    osc('triangle',f,t,end).connect(lp);const s=gain(.6);osc('sine',f,t,end).connect(s);s.connect(lp);lp.connect(e);out(e,.06);},
+  horn(t,f,d,g){const end=t+d+.6,o=osc('sawtooth',f,t,end);o.frequency.setValueAtTime(f*.985,t);o.frequency.linearRampToValueAtTime(f,t+.07);
+    const l=osc('sine',5.2,t,end),lg=gain(0);lg.gain.setValueAtTime(0,t);lg.gain.linearRampToValueAtTime(f*.007,t+Math.min(d,.5));l.connect(lg);lg.connect(o.frequency);
+    const bp=filt('bandpass',1300,1.1),lp=filt('lowpass',3000),e=gain(0);e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g,t+.07);e.gain.setTargetAtTime(g*.8,t+.07,.3);e.gain.setTargetAtTime(0,t+d-.03,.07);
+    o.connect(bp);bp.connect(lp);lp.connect(e);out(e,.4);},
+  clar(t,f,d,g){const end=t+d+.6,o=osc('square',f,t,end),l=osc('sine',5.6,t,end),lg=gain(0);lg.gain.setValueAtTime(0,t);lg.gain.linearRampToValueAtTime(f*.006,t+Math.min(d,.4));l.connect(lg);lg.connect(o.frequency);
+    const lp=filt('lowpass',1700,.8),e=gain(0);e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g*.55,t+.04);e.gain.setTargetAtTime(g*.45,t+.04,.3);e.gain.setTargetAtTime(0,t+d-.03,.05);
+    o.connect(lp);lp.connect(e);out(e,.35);},
+  pluck(t,f,d,g){const end=t+Math.max(d,.3)+1.2,lp=filt('lowpass',4200);lp.frequency.setTargetAtTime(1300,t,.12);const e=gain(0);e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g,t+.002);e.gain.setTargetAtTime(0,t+.002,.32);
+    osc('triangle',f,t,end).connect(lp);const h=gain(.35);osc('sine',f*2,t,end).connect(h);h.connect(lp);const h3=gain(.12);osc('sine',f*3,t,end).connect(h3);h3.connect(lp);lp.connect(e);out(e,.5);},
+  brush(t,f,d,g){const end=t+.5,e=gain(0);e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g,t+.02);e.gain.setTargetAtTime(0,t+.02,.07);const s=nz(t,end),bp=filt('bandpass',3200,.7);s.connect(bp);bp.connect(e);out(e,.2);},
+  ride(t,f,d,g){const end=t+1.2;out(perc(nz(t,end),t,g,.22,[filt('highpass',5500),filt('peaking',8000,2)]),.25);const p=gain(g*.12);osc('sine',5230,t,end).connect(p);out(perc(p,t,1,.25,[]),.2);},
+  hat(t,f,d,g){out(perc(nz(t,t+.2),t,g,.025,[filt('highpass',7500)]),.1);},
+  shaker(t,f,d,g){out(perc(nz(t,t+.2),t,g,.03,[filt('bandpass',6500,1.6)]),.15);},
+  rim(t,f,d,g){const o=osc('sine',1750,t,t+.15);out(perc(o,t,g*.6,.012,[]),.3);out(perc(nz(t,t+.15),t,g*.5,.015,[filt('bandpass',2600,2)]),.3);},
+  kick(t,f,d,g){const o=osc('sine',110,t,t+.5);o.frequency.setValueAtTime(110,t);o.frequency.exponentialRampToValueAtTime(46,t+.12);out(perc(o,t,g,.11,[]),0);},
+};
+function pump(){const s=SONGS[cur],spb=60/s.bpm,ahead=ctx.currentTime+.3;
+  for(;;){const e=s.ev[idx],t=loopT+e.t*spb;if(t>ahead)break;if(t>ctx.currentTime-.05)V[e.v](t,e.f,e.d*spb,e.g);
+    if(++idx>=s.ev.length){idx=0;loopT+=s.beats*spb;
+      if(api.list&&++loops>=s.loops){loops=0;loopT+=1.2;cur=(cur+1)%SONGS.length;crack(loopT);return pump();}}}}
+function crack(t){if(!bus)return;if(bus.crk&&!SONGS[cur].crackle){try{bus.crk.stop(t)}catch(e){}bus.crk=null;}
+  if(SONGS[cur].crackle&&!bus.crk){const c=ctx.createBufferSource();c.buffer=crk;c.loop=true;const g=gain(.5),lp=filt('lowpass',5000);c.connect(lp);lp.connect(g);g.connect(bus.d);c.start(t);bus.crk=c;bus.nodes.push(c);}}
+function start(i){
+  if(bus){const old=bus;old.d.gain.setTargetAtTime(0,ctx.currentTime,.15);old.s.gain.setTargetAtTime(0,ctx.currentTime,.15);setTimeout(()=>{old.d.disconnect();old.s.disconnect();old.nodes.forEach(n=>{try{n.stop()}catch(e){}});},1200);}
+  cur=i;bus=mkBus();idx=0;loops=0;loopT=ctx.currentTime+.12;crack(loopT);
+  clearInterval(timer);timer=setInterval(pump,40);pump();
+}
+const api={
+  list:false,count:SONGS.length,get on(){return on},get song(){return cur},
+  play(i=cur<0?0:cur){if(!ctx)setup();ctx.resume();if(!on||i!==cur)start(i);on=true;master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setTargetAtTime(vol,ctx.currentTime,.25);},
+  stop(){if(!ctx||!on)return;on=false;master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setTargetAtTime(0,ctx.currentTime,.12);
+    setTimeout(()=>{if(on)return;clearInterval(timer);if(bus){bus.nodes.forEach(n=>{try{n.stop()}catch(e){}});bus.d.disconnect();bus.s.disconnect();bus=null;}ctx.suspend();},600);},
+};
+document.addEventListener('visibilitychange',()=>{if(!ctx||!on)return;if(document.hidden){clearInterval(timer);ctx.suspend();}else{ctx.resume().then(()=>{start(cur);});}});
+return api;
+})();
+</script>
+<script>
+{const b=document.getElementById('snd');MUS.list=true;
+let want=(()=>{try{return localStorage.getItem('snd')!=='0'}catch(e){return true}})();
+const save=()=>{try{localStorage.setItem('snd',want?'1':'0')}catch(e){}};
+const show=()=>{b.setAttribute('aria-pressed',want);b.title=tr('music')+(want?' ✓':'');};
+const go=()=>{try{MUS.play()}catch(e){}};
+// browsers only allow sound after the visitor's first tap, so the music waits for it
+const first=e=>{if(e.target.closest&&e.target.closest('#snd'))return;off();if(want)go();};
+const off=()=>['pointerdown','keydown'].forEach(t=>removeEventListener(t,first,true));
+['pointerdown','keydown'].forEach(t=>addEventListener(t,first,true));
+b.addEventListener('click',()=>{off();if(want&&!MUS.on){go();}else{want=!want;want?go():MUS.stop();}save();show();});
+show();onLang.push(show);}
 </script>
 <script>
 {const ts=document.querySelector('.ts'),p=n=>String(n).padStart(2,'0');
