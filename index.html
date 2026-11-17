@@ -134,7 +134,7 @@ body{background-color:#120c0b;background-image:radial-gradient(ellipse 70% 55% a
     <span data-i18n="email">อีเมล</span><code id="em">Jurio.ju9@gmail.com</code>
     <button class="copy" id="cp" type="button" data-i18n="copy">คัดลอก</button>
   </div>
-  <p class="foot"><span data-i18n="foot">ลิงก์ในหน้านี้ยังเป็นตัวอย่าง</span> · 今晚，同你飲。</p>
+  <p class="foot"><span data-i18n="foot">ขอบคุณที่แวะมานะ</span> · 今晚，同你飲。</p>
 </div>
 
 <script>
@@ -144,13 +144,13 @@ const I18N={
   c_b5:'บาร์เทนเดอร์',c_p3:'นักเปียโน',c_s1:'นักร้อง',c_couple:'คู่รัก',c_meana:'ผู้หญิง',c_bf:'ผู้ชาย',pz:'หยุด',pl:'เล่น',
   l_pf:'รวมผลงานดีไซน์และระบบที่ทำ',l_gh:'โค้ดและโปรเจกต์เว็บ',p_bar:'ควิซ "วันนี้ดื่มอะไรดี?" ในบาร์พิกเซล',
   hid:'ชื่อยังเป็นความลับ',p_ftd:'ไพ่ทาโรต์ + โหราศาสตร์ ฉากท้องฟ้าจริง',p_rf:'เล่าสถานการณ์ แล้วเว็บช่วยวิเคราะห์',soon:'SOON',
-  email:'อีเมล',copy:'คัดลอก',copied:'คัดลอกแล้ว ✓',copyfail:'คัดลอกเองนะ',foot:'ลิงก์ในหน้านี้ยังเป็นตัวอย่าง'},
+  email:'อีเมล',copy:'คัดลอก',copied:'คัดลอกแล้ว ✓',copyfail:'คัดลอกเองนะ',foot:'ขอบคุณที่แวะมานะ'},
  en:{scene:'A late-night Shanghai lounge in isometric pixel art: black-and-white marble checker floor, gold-trimmed walnut walls, a red leather bar with arched red-lit bottle cabinets, a Chinese lattice screen glowing green, a gold-framed stage with red velvet curtains and red lanterns, palms and ferns. Two lovers swing-dance under a spotlight, a bartender works the bar, a singer and a pianist play on stage. Neon signs read 美琳酒吧 and 今晚飲咩',
   sub:'Tonight, drinking with you.',hint:'Tap a character or a button to change the move',pause:'Pause animation',play:'Play animation',music:'Background music',
   c_b5:'Bartender',c_p3:'Pianist',c_s1:'Singer',c_couple:'Lovers',c_meana:'Lady',c_bf:'Gentleman',pz:'Pause',pl:'Play',
   l_pf:'Design work and systems I’ve built',l_gh:'Code and web projects',p_bar:'A "What should I drink tonight?" quiz in a pixel bar',
   hid:'Name under wraps',p_ftd:'Tarot + astrology under a real night sky',p_rf:'Describe a situation and the site helps you read it',soon:'SOON',
-  email:'Email',copy:'Copy',copied:'Copied ✓',copyfail:'Copy it manually',foot:'Links on this page are placeholders for now'}};
+  email:'Email',copy:'Copy',copied:'Copied ✓',copyfail:'Copy it manually',foot:'Thanks for stopping by'}};
 let LANG=(()=>{try{const l=localStorage.getItem('lang');return l==='en'?'en':'th'}catch(e){return 'th'}})();
 const tr=k=>I18N[LANG][k]??I18N.th[k];
 const onLang=[];
