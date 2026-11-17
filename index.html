@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Meilin · Links</title>
-<meta name="description" content="MEILIN 美琳 — Creator · Game Design · Web & Systems · Video">
+<meta name="description" content="MEILIN 美琳 — Creator · Design · Web & Systems · Video">
 <meta name="robots" content="noai, noimageai">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Silkscreen&family=Mitr:wght@300;400;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&text=美琳酒吧今晚飲咩好味香港，一個人。連結作品碼飲星旗綠絨絲金嗓子對" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&text=美琳酒吧今晚飲咩好味香港，一個人。連結作品碼飲星旗綠絨絲金嗓子對他停播" rel="stylesheet">
 <style>
 /* VOICE: a designer's draft board — six little dioramas laid out to choose from
    IDEA: a contact sheet of isometric miniature rooms, like the reference doll-house render
@@ -101,8 +101,9 @@ body{background-color:#120c0b;background-image:radial-gradient(ellipse 70% 55% a
 .lang .snd .w{opacity:0}.lang .snd[aria-pressed="true"] .w{opacity:1}.lang .snd[aria-pressed="true"] .x{opacity:0}
 .lang .snd[aria-pressed="true"]{background:#0d2a1e;color:#7fe3a8;box-shadow:0 0 14px -2px #3fbf7a}
 .lang .snd[aria-pressed="false"]{color:#4f8f6a;box-shadow:none}
-.ctl .row{display:flex;gap:8px;align-items:flex-start}.ctl .row .cast{flex:1}
-.ctl .pp{flex:none;width:44px;padding:0;display:grid;place-items:center}
+.ctl .row{display:flex;flex-wrap:wrap;gap:8px}.ctl .row .cast{display:contents}
+.ctl .pp{flex:none;white-space:nowrap;box-shadow:0 0 14px -5px #e8b04a}.ctl .pp b{color:#e8b04a;text-shadow:0 0 6px rgba(232,176,74,.7)}
+.ctl .pp[aria-pressed="true"]{background:#e8b04a;color:#2e220b}.ctl .pp[aria-pressed="true"] b{color:#3a0d0c;text-shadow:none}
 .hd{padding-top:28px}
 </style>
 </head>
@@ -139,13 +140,13 @@ body{background-color:#120c0b;background-image:radial-gradient(ellipse 70% 55% a
 const I18N={
  th:{scene:'เลานจ์บาร์เซี่ยงไฮ้ยามดึกแบบพิกเซลอาร์ตมุมไอโซเมตริก: พื้นหินอ่อนลายตารางขาวดำ ผนังไม้วอลนัทขอบทอง บาร์หนังแดงกับตู้ขวดซุ้มโค้งไฟแดง ฉากฉลุจีนแสงเขียว เวทีม่านกำมะหยี่แดงกรอบทองกับโคมแดง ต้นปาล์มและเฟิร์น คู่รักเต้นสวิงกลางห้องใต้สปอตไลต์ บาร์เทนเดอร์หลังบาร์ นักร้องกับนักเปียโนบนเวที ป้าย 美琳酒吧 และ 今晚飲咩',
   sub:'คืนนี้ ดื่มกับเธอ',hint:'แตะตัวละครหรือปุ่มเพื่อเปลี่ยนท่า',pause:'หยุดอนิเมชัน',play:'เล่นอนิเมชัน',music:'เพลงคลอ',
-  c_b5:'บาร์เทนเดอร์',c_p3:'นักเปียโน',c_s1:'นักร้อง',c_couple:'คู่รัก',c_meana:'เหม่ยหลิน',c_bf:'เขา',
+  c_b5:'บาร์เทนเดอร์',c_p3:'นักเปียโน',c_s1:'นักร้อง',c_couple:'คู่รัก',c_meana:'ผู้หญิง',c_bf:'ผู้ชาย',pz:'หยุด',pl:'เล่น',
   l_pf:'รวมผลงานดีไซน์และระบบที่ทำ',l_gh:'โค้ดและโปรเจกต์เว็บ',p_bar:'ควิซ "วันนี้ดื่มอะไรดี?" ในบาร์พิกเซล',
   p_ft:'เว็บดูดวง',p_ftd:'ไพ่ทาโรต์ + โหราศาสตร์ ฉากท้องฟ้าจริง',p_rf:'เล่าสถานการณ์ แล้วเว็บช่วยวิเคราะห์',soon:'SOON',
   email:'อีเมล',copy:'คัดลอก',copied:'คัดลอกแล้ว ✓',copyfail:'คัดลอกเองนะ',foot:'ลิงก์ในหน้านี้ยังเป็นตัวอย่าง'},
  en:{scene:'A late-night Shanghai lounge in isometric pixel art: black-and-white marble checker floor, gold-trimmed walnut walls, a red leather bar with arched red-lit bottle cabinets, a Chinese lattice screen glowing green, a gold-framed stage with red velvet curtains and red lanterns, palms and ferns. Two lovers swing-dance under a spotlight, a bartender works the bar, a singer and a pianist play on stage. Neon signs read 美琳酒吧 and 今晚飲咩',
   sub:'Tonight, drinking with you.',hint:'Tap a character or a button to change the move',pause:'Pause animation',play:'Play animation',music:'Background music',
-  c_b5:'Bartender',c_p3:'Pianist',c_s1:'Singer',c_couple:'Lovers',c_meana:'Meilin',c_bf:'Him',
+  c_b5:'Bartender',c_p3:'Pianist',c_s1:'Singer',c_couple:'Lovers',c_meana:'Lady',c_bf:'Gentleman',pz:'Pause',pl:'Play',
   l_pf:'Design work and systems I’ve built',l_gh:'Code and web projects',p_bar:'A "What should I drink tonight?" quiz in a pixel bar',
   p_ft:'Fortune Site',p_ftd:'Tarot + astrology under a real night sky',p_rf:'Describe a situation and the site helps you read it',soon:'SOON',
   email:'Email',copy:'Copy',copied:'Copied ✓',copyfail:'Copy it manually',foot:'Links on this page are placeholders for now'}};
@@ -221,7 +222,7 @@ cv.addEventListener('click',e=>{const r=cv.getBoundingClientRect(),x=(e.clientX-
 const pp=document.getElementById('pp');
 const IC={pause:'<svg viewBox="0 0 8 8" aria-hidden="true"><path fill="currentColor" d="M2 1h1.5v6H2zM4.5 1H6v6H4.5z"/></svg>',
  play:'<svg viewBox="0 0 8 8" aria-hidden="true"><path fill="currentColor" d="M2 1h1v6H2zM3 2h1v4H3zM4 3h1v2H4zM5 3.5h1v1H5z"/></svg>'};
-const lab=()=>{const k=paused?'play':'pause';pp.innerHTML=IC[k];pp.setAttribute('aria-label',tr(k));pp.title=tr(k);pp.setAttribute('aria-pressed',paused);};lab();onLang.push(lab);
+const lab=()=>{const k=paused?'play':'pause';pp.innerHTML=`<b lang="zh-Hant">${paused?'播':'停'}</b> ${tr(paused?'pl':'pz')}`;pp.setAttribute('aria-label',tr(k));pp.title=tr(k);pp.setAttribute('aria-pressed',paused);};lab();onLang.push(lab);
 pp.addEventListener('click',()=>{paused=!paused;lab();});
 }
 </script>
