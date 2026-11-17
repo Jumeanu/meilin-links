@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meilin · Links</title>
+<meta name="description" content="MEILIN 美琳 — Creator · Game Design · Web & Systems · Video">
+<meta name="robots" content="noai, noimageai">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Silkscreen&family=Mitr:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&text=美琳酒吧今晚飲咩好味香港，一個人。連結作品碼飲星旗綠絨絲金嗓子對" rel="stylesheet">
+<style>
+/* VOICE: a designer's draft board — six little dioramas laid out to choose from
+   IDEA: a contact sheet of isometric miniature rooms, like the reference doll-house render
+   PICTURE: six isometric HK-style bar rooms, each with pixel Meana sitting with a drink
+   COLOUR and TYPE: warm near-black board, cream cards, HK green + lantern red accents; Bungee labels + Mitr
+   LAYOUT: title, then a 2-column grid of lettered cards (1 column on phones) */
+:root{color-scheme:dark;--bg:#14100e;--card:#1f1915;--ink:#f3e9d8;--soft:#bfae98;--red:#c0202a;--green:#1f7a4a;--gold:#e8b04a}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Mitr",system-ui,sans-serif;font-weight:300;overflow-x:clip}
+.wrap{max-width:1180px;margin:0 auto;padding:clamp(22px,4vw,48px) max(4vw,14px) 48px}
+h1{margin:0;font:600 clamp(28px,5vw,44px)/1.15 "Mitr";text-wrap:balance}
+h1 b{font:400 .8em "Bungee";color:var(--gold)}
+.lead{color:var(--soft);margin:8px 0 26px;max-width:62ch}
+.grid{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;max-width:880px;margin:0 auto}
+.card{background:var(--card);border:1px solid #3a2f27;border-radius:14px;overflow:hidden}
+.card svg{display:block;width:100%;height:auto;background:radial-gradient(ellipse at 50% 40%,#2a211b,#120e0c 75%)}
+.cap{display:flex;gap:14px;align-items:flex-start;padding:14px 18px 18px}
+.tag{flex:none;min-width:44px;height:44px;padding:0 10px;border-radius:22px;font-size:14px!important;display:grid;place-items:center;font:400 20px "Bungee";background:var(--red);color:#fbe7bd}
+.cap h2{margin:0;font:600 19px/1.3 "Mitr"}
+.cap p{margin:2px 0 0;font-size:14px;color:var(--soft)}
+
+.wrap{max-width:760px}
+.hd{text-align:center;margin:6px 0 22px}
+.zh{font:900 22px/1 "Noto Serif TC",serif;color:#ff9cc8;letter-spacing:6px;text-shadow:0 0 10px rgba(255,140,190,.8)}
+.hd h1{margin:6px 0 0;font:400 clamp(52px,13vw,84px)/1 "Bungee";color:#ff5a4a;text-shadow:0 0 8px rgba(255,90,74,.9),0 0 26px rgba(255,60,40,.6);animation:fl 5s infinite}
+.hd .th{margin:6px 0 0;font:600 20px "Mitr";color:#f3e9d8}
+.hd .bio{margin:6px auto 0;max-width:40ch;color:var(--soft)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0 0}
+.tags span{font:400 12px "Bungee";padding:3px 10px;border:1.5px solid #3fbf7a;color:#7fe3a8;border-radius:3px}
+.grid{max-width:none}
+.card{border-color:#2a3a30}
+h2{display:flex;align-items:center;gap:12px;margin:30px 0 14px;font:400 20px "Bungee";color:#e8b04a}
+h2 i{font:900 26px/1 "Noto Serif TC",serif;font-style:normal;color:#ff5a4a;text-shadow:0 0 8px rgba(255,90,74,.7)}
+h2::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,#3fbf7a,transparent)}
+.menu{display:grid;gap:12px}
+.btn{position:relative;display:flex;align-items:center;gap:14px;min-height:68px;padding:12px 18px 12px 12px;text-decoration:none;border-radius:6px;background:var(--bg);color:var(--fg);border:1.5px solid var(--ln);box-shadow:0 0 0 1px rgba(0,0,0,.4),0 0 18px -6px var(--ln);transition:transform .15s,box-shadow .15s}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(0,0,0,.4),0 0 26px -2px var(--ln);outline:none}
+.btn:focus-visible{outline:2px solid #e8b04a;outline-offset:3px}
+.r{--bg:#3a0d0c;--fg:#ffd9c9;--ln:#ff5a4a}.g{--bg:#0d2a1e;--fg:#d9f5e3;--ln:#3fbf7a}.y{--bg:#2e220b;--fg:#ffe7b0;--ln:#e8b04a}.p{--bg:#2e1220;--fg:#ffe0ee;--ln:#ff9cc8}.t{--bg:#0e2629;--fg:#d6f4ef;--ln:#5fd3c4}
+.orn{width:46px;height:46px;flex:none;color:var(--ln);filter:drop-shadow(0 0 2px var(--ln)) drop-shadow(0 0 6px var(--ln));overflow:visible}
+.orn .o,.orn .o path,.orn .o circle{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linejoin:round;stroke-linecap:round}
+.orn .f,.orn .f path,.orn .f circle{fill:currentColor;stroke:none}
+.btn:hover .orn,.btn:focus-visible .orn{transform:rotate(45deg);transition:transform .4s}
+.lbl{flex:1;display:grid;line-height:1.3}
+.lbl b{font:400 16px "Bungee"}.lbl b.th{font:600 17px "Mitr"}
+.lbl small{font-size:13px;opacity:.8}
+.ar{font:400 18px "Bungee";color:var(--ln)}
+.soon{font:400 11px "Bungee";color:var(--ln);border:1px solid var(--ln);padding:2px 8px;border-radius:3px;white-space:nowrap}
+.btn.off{cursor:default;opacity:.85}.btn.off:hover{transform:none}
+.mail{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;margin:26px 0 0;padding:14px;border:1.5px dashed #e8b04a;border-radius:6px}
+.mail span{color:var(--soft)}.mail code{font:400 16px "Mitr";color:#ffe7b0}
+.copy{font:400 13px "Bungee";min-height:44px;padding:0 18px;border:0;border-radius:4px;background:#e8b04a;color:#14100e;cursor:pointer}
+.copy:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.foot{margin-top:26px;color:var(--soft);font-size:14px;text-align:center}
+.fl{animation:fl 4s infinite}.fl2{animation:fl 6s 1s infinite}
+.grain{animation:gr .5s steps(3) infinite}@keyframes gr{33%{transform:translate(-6px,4px)}66%{transform:translate(5px,-5px)}}
+.shake{transform-box:fill-box;transform-origin:50% 100%;animation:sh .6s ease-in-out infinite}@keyframes sh{50%{transform:translate(1px,-3px) rotate(-6deg)}}
+.dance{transform-box:fill-box;transform-origin:50% 100%;animation:dn 1.2s ease-in-out infinite}
+@keyframes dn{0%,100%{transform:rotate(-4deg)}25%{transform:translateY(-3px) rotate(0)}50%{transform:rotate(4deg)}75%{transform:translateY(-3px) rotate(0)}}
+.fa{animation:fa 1.2s steps(1) infinite}.fb{animation:fb 1.2s steps(1) infinite}
+@keyframes fa{0%{opacity:1}50%{opacity:0}}@keyframes fb{0%{opacity:0}50%{opacity:1}}
+.note{animation:nt 3s linear infinite;opacity:0}.n1{animation-delay:1s}.n2{animation-delay:2s}
+@keyframes nt{0%{opacity:0;transform:translate(0,0)}20%{opacity:1}100%{opacity:0;transform:translate(14px,-40px)}}
+.bob{transform-box:fill-box;transform-origin:50% 100%;animation:bb .8s ease-in-out infinite}@keyframes bb{50%{transform:translateY(-2px)}}
+.sway2{transform-box:fill-box;transform-origin:50% 100%;animation:sw2 1.6s ease-in-out infinite}@keyframes sw2{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes fl{0%,90%,94%,100%{opacity:1}92%{opacity:.45}}
+@media(prefers-reduced-motion:reduce){.fl,.fl2,.grain,.shake,.dance,.note,.bob,.sway2{animation:none}.fb{opacity:0}.note{opacity:.8}}
+@media(max-width:760px){.grid{grid-template-columns:minmax(0,1fr)}}
+.scene{margin:0}
+.stage{position:relative;aspect-ratio:200/210;background:#050403}
+.stage canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;image-rendering:crisp-edges;cursor:pointer}
+.ts{position:absolute;left:3.5%;top:2.6%;font:400 clamp(9px,1.9vw,13px) "Silkscreen",monospace;color:#e8b04a;opacity:.75;pointer-events:none}
+.subs{position:absolute;left:0;right:0;bottom:1.2%;display:grid;justify-items:center;line-height:1.25;color:#f2e6a0;pointer-events:none;text-shadow:0 1px 0 #000}
+.subs span:first-child{font:900 clamp(13px,2.6vw,18px) "Noto Serif TC",serif}
+.subs span:last-child{font:400 clamp(11px,2.1vw,15px) "Mitr"}
+.ctl{display:grid;gap:10px;padding:12px 14px 14px;border-top:1px solid #2a3a30;font-size:13px;color:var(--soft)}
+.cast{display:flex;flex-wrap:wrap;gap:8px}
+.ctl button{font:400 14px "Mitr";min-height:44px;padding:0 14px;border-radius:4px;border:1.5px solid #3fbf7a;background:#0d2a1e;color:#d9f5e3;cursor:pointer}
+.ctl button b{font:900 14px "Noto Serif TC",serif;color:#7fe3a8;margin-right:2px}
+.ctl .pp{justify-self:start;border-color:#e8b04a;background:#2e220b;color:#ffe7b0}
+.ctl button:focus-visible{outline:2px solid #e8b04a;outline-offset:2px}
+body{background-color:#120c0b;background-image:radial-gradient(ellipse 70% 55% at 50% 22%,rgba(18,12,11,.9),rgba(18,12,11,.55) 70%,rgba(18,12,11,.35)),linear-gradient(90deg,rgba(18,12,11,.15),rgba(18,12,11,.62) 30%,rgba(18,12,11,.62) 70%,rgba(18,12,11,.15)),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22112%22 height=%22112%22 viewBox=%220 0 112 112%22%3E %3Cdefs%3E%3Cfilter id=%22n%22 x=%22-20%25%22 y=%22-20%25%22 width=%22140%25%22 height=%22140%25%22%3E%3CfeGaussianBlur stdDeviation=%221.6%22 result=%22b%22/%3E%3CfeMerge%3E%3CfeMergeNode in=%22b%22/%3E%3CfeMergeNode in=%22b%22/%3E%3CfeMergeNode in=%22SourceGraphic%22/%3E%3C/feMerge%3E%3C/filter%3E %3Cg id=%22s%22%3E%3Cpath d=%22M0 -18Q4.5 -4.5 18 0Q4.5 4.5 0 18Q-4.5 4.5 -18 0Q-4.5 -4.5 0 -18Z%22/%3E%3C/g%3E%3C/defs%3E %3Cg filter=%22url(%23n)%22 fill=%22none%22 stroke-linejoin=%22round%22%3E %3Ccircle cx=%2256%22 cy=%2256%22 r=%2233%22 stroke=%22%23e8b04a%22 stroke-width=%221%22 opacity=%22.45%22/%3E %3Cpath d=%22M40 40A16 16 0 0 1 72 40A16 16 0 0 1 72 72A16 16 0 0 1 40 72A16 16 0 0 1 40 40Z%22 stroke=%22%23ff4a5a%22 stroke-width=%222.2%22/%3E %3Cpath d=%22M47 47A9 9 0 0 1 65 47A9 9 0 0 1 65 65A9 9 0 0 1 47 65A9 9 0 0 1 47 47Z%22 stroke=%22%23ff9cc8%22 stroke-width=%221.6%22/%3E %3Ccircle cx=%2256%22 cy=%2256%22 r=%223.6%22 fill=%22%23ffd27a%22 stroke=%22none%22/%3E %3Cg stroke=%22%233fdc8a%22 stroke-width=%222%22%3E %3Cuse href=%22%23s%22 x=%220%22 y=%220%22/%3E%3Cuse href=%22%23s%22 x=%22112%22 y=%220%22/%3E%3Cuse href=%22%23s%22 x=%220%22 y=%22112%22/%3E%3Cuse href=%22%23s%22 x=%22112%22 y=%22112%22/%3E%3C/g%3E %3Cg stroke=%22%235fd3c4%22 stroke-width=%221.3%22%3E%3Cpath d=%22M56 -6L62 0L56 6L50 0Z%22/%3E%3Cpath d=%22M56 106L62 112L56 118L50 112Z%22/%3E%3Cpath d=%22M-6 56L0 50L6 56L0 62Z%22/%3E%3Cpath d=%22M106 56L112 50L118 56L112 62Z%22/%3E%3C/g%3E %3C/g%3E%3C/svg%3E");background-size:auto,auto,112px 112px;background-attachment:fixed,fixed,fixed}
+.wrap{position:relative}
+.lang{position:absolute;top:clamp(14px,3vw,30px);right:max(4vw,14px);display:flex;gap:6px;z-index:2}
+.lang button{font:400 13px "Bungee";min-width:44px;min-height:36px;padding:0 10px;border-radius:4px;border:1.5px solid #3fbf7a;background:#0d2a1e;color:#7fe3a8;cursor:pointer;box-shadow:0 0 12px -4px #3fbf7a}
+.lang button[aria-pressed="true"]{background:#3fbf7a;color:#0d2a1e}
+.lang button:focus-visible{outline:2px solid #e8b04a;outline-offset:2px}
+.hd{padding-top:28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang" role="group" aria-label="Language / ภาษา"><button type="button" data-l="th" aria-pressed="true">TH</button><button type="button" data-l="en" aria-pressed="false">EN</button></div>
+  <header class="hd">
+    <div class="zh" lang="zh-Hant">美琳</div>
+    <h1>MEILIN</h1>
+    <div class="tags"><span>Creator</span><span>Game Design</span><span>Web &amp; Systems</span><span>Video</span></div>
+  </header>
+  <figure class="card scene">
+    <div class="stage">
+      <canvas id="px" width="200" height="210" role="img" data-i18n-aria="scene" aria-label="เลานจ์บาร์เซี่ยงไฮ้ยามดึกแบบพิกเซลอาร์ตมุมไอโซเมตริก: พื้นหินอ่อนลายตารางขาวดำ ผนังไม้วอลนัทขอบทอง บาร์หนังแดงกับตู้ขวดซุ้มโค้งไฟแดง ฉากฉลุจีนแสงเขียว เวทีม่านกำมะหยี่แดงกรอบทองกับโคมแดง ต้นปาล์มและเฟิร์น คู่รักเต้นสวิงกลางห้องใต้สปอตไลต์ บาร์เทนเดอร์หลังบาร์ นักร้องกับนักเปียโนบนเวที ป้าย 美琳酒吧 และ 今晚飲咩"></canvas>
+      <span class="ts">2026.11.17 · 09:40</span>
+      <figcaption class="subs"><span lang="zh-Hant">今晚，同你飲。</span><span data-i18n="sub">คืนนี้ ดื่มกับเธอ</span></figcaption>
+    </div>
+    <div class="ctl"><span data-i18n="hint">แตะตัวละครหรือปุ่มเพื่อเปลี่ยนท่า</span><div class="cast" id="cast"></div><button type="button" id="pp" class="pp" aria-pressed="false">⏸ หยุดอนิเมชัน</button></div>
+  </figure>
+
+  <h2><i>連結</i>Links</h2>
+  <nav class="menu" id="links"></nav>
+  <h2><i>作品</i>Projects</h2>
+  <div class="menu" id="projects"></div>
+
+  <div class="mail">
+    <span data-i18n="email">อีเมล</span><code id="em">Jurio.ju9@gmail.com</code>
+    <button class="copy" id="cp" type="button" data-i18n="copy">คัดลอก</button>
+  </div>
+  <p class="foot"><span data-i18n="foot">ลิงก์ในหน้านี้ยังเป็นตัวอย่าง</span> · 今晚，同你飲。</p>
+</div>
+
+<script>
+const I18N={
+ th:{scene:'เลานจ์บาร์เซี่ยงไฮ้ยามดึกแบบพิกเซลอาร์ตมุมไอโซเมตริก: พื้นหินอ่อนลายตารางขาวดำ ผนังไม้วอลนัทขอบทอง บาร์หนังแดงกับตู้ขวดซุ้มโค้งไฟแดง ฉากฉลุจีนแสงเขียว เวทีม่านกำมะหยี่แดงกรอบทองกับโคมแดง ต้นปาล์มและเฟิร์น คู่รักเต้นสวิงกลางห้องใต้สปอตไลต์ บาร์เทนเดอร์หลังบาร์ นักร้องกับนักเปียโนบนเวที ป้าย 美琳酒吧 และ 今晚飲咩',
+  sub:'คืนนี้ ดื่มกับเธอ',hint:'แตะตัวละครหรือปุ่มเพื่อเปลี่ยนท่า',pause:'⏸ หยุดอนิเมชัน',play:'▶ เล่นอนิเมชัน',
+  c_b5:'บาร์เทนเดอร์',c_p3:'นักเปียโน',c_s1:'นักร้อง',c_couple:'คู่รัก',
+  l_pf:'รวมผลงานดีไซน์และระบบที่ทำ',l_gh:'โค้ดและโปรเจกต์เว็บ',p_bar:'ควิซ "วันนี้ดื่มอะไรดี?" ในบาร์พิกเซล',
+  p_ft:'เว็บดูดวง',p_ftd:'ไพ่ทาโรต์ + โหราศาสตร์ ฉากท้องฟ้าจริง',p_rf:'เล่าสถานการณ์ แล้วเว็บช่วยวิเคราะห์',soon:'SOON',
+  email:'อีเมล',copy:'คัดลอก',copied:'คัดลอกแล้ว ✓',copyfail:'คัดลอกเองนะ',foot:'ลิงก์ในหน้านี้ยังเป็นตัวอย่าง'},
+ en:{scene:'A late-night Shanghai lounge in isometric pixel art: black-and-white marble checker floor, gold-trimmed walnut walls, a red leather bar with arched red-lit bottle cabinets, a Chinese lattice screen glowing green, a gold-framed stage with red velvet curtains and red lanterns, palms and ferns. Two lovers swing-dance under a spotlight, a bartender works the bar, a singer and a pianist play on stage. Neon signs read 美琳酒吧 and 今晚飲咩',
+  sub:'Tonight, drinking with you.',hint:'Tap a character or a button to change the move',pause:'⏸ Pause animation',play:'▶ Play animation',
+  c_b5:'Bartender',c_p3:'Pianist',c_s1:'Singer',c_couple:'Lovers',
+  l_pf:'Design work and systems I’ve built',l_gh:'Code and web projects',p_bar:'A "What should I drink tonight?" quiz in a pixel bar',
+  p_ft:'Fortune Site',p_ftd:'Tarot + astrology under a real night sky',p_rf:'Describe a situation and the site helps you read it',soon:'SOON',
+  email:'Email',copy:'Copy',copied:'Copied ✓',copyfail:'Copy it manually',foot:'Links on this page are placeholders for now'}};
+let LANG=(()=>{try{const l=localStorage.getItem('lang');return l==='en'?'en':'th'}catch(e){return 'th'}})();
+const tr=k=>I18N[LANG][k]??I18N.th[k];
+const onLang=[];
+function setLang(l){LANG=l;try{localStorage.setItem('lang',l)}catch(e){}
+ document.documentElement.lang=l;
+ document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=tr(e.dataset.i18n));
+ document.querySelectorAll('[data-i18n-aria]').forEach(e=>e.setAttribute('aria-label',tr(e.dataset.i18nAria)));
+ document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+ onLang.forEach(f=>f());}
+</script>
+<script>
+{
+const D={"IMG":{"bgN":"assets/scene/room.png","bgA":"assets/scene/room-dim-a.png","bgB":"assets/scene/room-dim-b.png","fg":"assets/scene/piano-front.png"},"SP":{"b5/shake":{"n":17,"d":[160,140,85,85,85,85,85,85,85,85,85,85,85,85,200,160,450],"w":44,"src":"assets/sprites/b5-shake.png"},"b5/pour":{"n":11,"d":[300,200,200,160,160,160,160,180,200,260,500],"w":44,"src":"assets/sprites/b5-pour.png"},"b5/wink":{"n":10,"d":[500,300,300,300,300,350,350,500,110,450],"w":44,"src":"assets/sprites/b5-wink.png"},"s1/sing":{"n":10,"d":[220,220,220,220,220,220,220,220,220,220],"w":44,"src":"assets/sprites/s1-sing.png"},"s1/highnote":{"n":13,"d":[220,180,180,160,160,160,160,160,160,200,450,110,300],"w":44,"src":"assets/sprites/s1-highnote.png"},"s1/sway":{"n":8,"d":[320,320,320,320,320,320,320,320],"w":44,"src":"assets/sprites/s1-sway.png"},"p3/play":{"n":12,"d":[130,130,130,130,130,130,130,130,130,130,130,130],"w":44,"src":"assets/sprites/p3-play.png"},"p3/flourish":{"n":9,"d":[120,120,120,160,300,100,160,200,500],"w":44,"src":"assets/sprites/p3-flourish.png"},"p3/glasses":{"n":11,"d":[500,150,150,250,200,200,150,160,160,600,500],"w":44,"src":"assets/sprites/p3-glasses.png"},"couple/toast":{"n":8,"d":[260,220,300,300,240,500,300,500],"w":80,"src":"assets/sprites/couple-toast.png"},"couple/rose":{"n":7,"d":[400,250,400,300,300,600,500],"w":80,"src":"assets/sprites/couple-rose.png"},"couple/hands":{"n":8,"d":[300,300,300,300,300,300,300,300],"w":80,"src":"assets/sprites/couple-hands.png"},"couple/lean":{"n":7,"d":[400,300,700,700,700,110,500],"w":80,"src":"assets/sprites/couple-lean.png"},"couple/swing":{"n":16,"d":[170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170],"w":80,"src":"assets/sprites/couple-swing.png"}},"CAST":[{"id":"b5","name":"บาร์เทนเดอร์","zh":"綠絨","pos":[117,74],"clip":50,"seq":[["shake",2],["pour",1],["wink",1]]},{"id":"p3","name":"นักเปียโน","zh":"絲絨","pos":[50,90],"clip":33,"seq":[["play",3],["flourish",1],["play",2],["glasses",1]],"fg":1},{"id":"s1","name":"นักร้อง","zh":"金嗓子","pos":[5,100],"clip":44,"seq":[["sing",2],["highnote",1],["sing",1],["sway",2]]},{"id":"couple","name":"คู่รัก","zh":"一對","pos":[73,123],"clip":44,"seq":[["swing",3],["toast",2],["hands",3],["rose",2],["lean",2]],"spot":1}],"JUKE":[62,96]};
+const W=200,H=210,cv=document.getElementById('px'),g=cv.getContext('2d');g.imageSmoothingEnabled=false;
+const load=src=>{const im=new Image();im.src=src;return im};
+const BG={N:load(D.IMG.bgN),A:load(D.IMG.bgA),B:load(D.IMG.bgB)},FG=load(D.IMG.fg);
+const SP={};for(const k in D.SP)SP[k]=Object.assign({},D.SP[k],{im:load(D.SP[k].src)});
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;let paused=RM;
+const st=D.CAST.map(c=>({c,s:0,loop:0,f:0,t:0}));
+const cur=p=>SP[p.c.id+'/'+p.c.seq[p.s][0]];
+const setAct=(p,s)=>{p.s=(s+p.c.seq.length)%p.c.seq.length;p.loop=0;p.f=0;p.t=0;};
+// stepped, dithered vignette + three grain frames, made once at pixel size
+const mk=()=>{const c=document.createElement('canvas');c.width=W;c.height=H;return c};
+const vig=mk();{const x=vig.getContext('2d'),d=x.createImageData(W,H),B=[0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5];
+ for(let y=0;y<H;y++)for(let X=0;X<W;X++){const dx=(X-W/2)/(W*.7),dy=(y-H*.46)/(H*.7),r=Math.hypot(dx,dy);let a=Math.max(0,Math.min(1,(r-.55)/.45))*.8;
+  a=Math.floor(a*5+B[(y%4)*4+X%4]/16)/5;const o=(y*W+X)*4;d.data[o+3]=a*255;}x.putImageData(d,0,0);}
+// spotlight on the couple: soft dithered dimming everywhere else + a faint warm beam
+const dark=mk();{const x=dark.getContext('2d'),d=x.createImageData(W,H),B=[0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5];
+ for(let y=0;y<H;y++)for(let X=0;X<W;X++){const r=Math.hypot((X-107)/40,(y-145)/34);let a=Math.max(0,Math.min(1,(r-.5)/.8))*.3;
+  a=Math.floor(a*16+B[(y%4)*4+X%4]/16)/16;const o=(y*W+X)*4;d.data[o]=6;d.data[o+1]=8;d.data[o+2]=12;d.data[o+3]=a*255;}x.putImageData(d,0,0);}
+const beam=mk();{const x=beam.getContext('2d'),d=x.createImageData(W,H),B=[0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5];
+ for(let y=17;y<170;y++){const t=(y-17)/146,hw=4+t*24;for(let X=Math.floor(107-hw)-1;X<107+hw+2;X++){const e=Math.abs(X-107)/hw;if(e>=1)continue;
+  let a=Math.pow(1-e,1.5)*.2*(.4+.6*t);a=Math.floor(a*12+B[(y%4)*4+X%4]/16)/12;const o=(y*W+X)*4;d.data[o]=255;d.data[o+1]=220;d.data[o+2]=160;d.data[o+3]=a*255;}}x.putImageData(d,0,0);}
+const grain=[0,1,2].map(()=>{const c=mk(),x=c.getContext('2d'),d=x.createImageData(W,H);for(let o=0;o<d.data.length;o+=4){const r=Math.random();if(r<.07){const v=r<.035?255:0;d.data[o]=d.data[o+1]=d.data[o+2]=v;d.data[o+3]=22;}}x.putImageData(d,0,0);return c});
+// little notes floating out of the jukebox
+const NOTE=[["..##.","..#.#","..#..","###..","##..."],["..###","..#.#","..#.#","###.#","##.##"]];
+const NC=['#ffd27a','#ff9cc8','#7fe3d3'];
+const drawNote=(i,x,y,a)=>{if(a<=0)return;g.globalAlpha=Math.ceil(a*3)/3;g.fillStyle=NC[i%3];NOTE[i%2].forEach((r,yy)=>[...r].forEach((ch,xx)=>{if(ch==='#')g.fillRect(x+xx,y+yy,1,1)}));g.globalAlpha=1;};
+let T=0,last=performance.now();
+const draw=()=>{
+  const tA=T%4000,tB=(T+5000)%6000,bg=(tA>3600&&tA<3760)?BG.A:(tB>5450&&tB<5650)?BG.B:BG.N;
+  g.drawImage(bg,0,0);
+  for(let i=0;i<3;i++){const k=((T/3000)+i/3)%1;drawNote(i,D.JUKE[0]+Math.round(k*7)+i,D.JUKE[1]-Math.round(k*22),k<.2?k/.2:1-(k-.2)/.8);}
+  st.forEach(p=>{const a=cur(p);if(p.c.spot)g.drawImage(dark,0,0);if(!a.im.complete)return;const h=p.c.clip;g.drawImage(a.im,p.f*a.w,0,a.w,h,p.c.pos[0],p.c.pos[1],a.w,h);if(p.c.fg)g.drawImage(FG,0,0);
+    if(p.c.spot){g.globalCompositeOperation='lighter';g.drawImage(beam,0,0);g.globalCompositeOperation='source-over';}});
+  g.drawImage(vig,0,0);g.drawImage(grain[Math.floor(T/110)%3],0,0);
+  g.fillStyle='#050403';g.fillRect(0,0,W,17);g.fillRect(0,193,W,H-193);
+};
+const tick=now=>{const dt=Math.min(now-last,250);last=now;
+  if(!paused){T+=dt;st.forEach(p=>{const a=cur(p);p.t+=dt;while(p.t>=a.d[p.f]){p.t-=a.d[p.f];p.f++;if(p.f>=a.n){p.f=0;if(++p.loop>=p.c.seq[p.s][1]){setAct(p,p.s+1);break;}}}});}
+  draw();requestAnimationFrame(tick);};
+Promise.all([...Object.values(BG),FG,...Object.values(SP).map(a=>a.im)].map(im=>im.decode().catch(()=>{}))).then(()=>{draw();requestAnimationFrame(tick)});
+// buttons + tapping the canvas both change a character's pose
+const bar=document.getElementById('cast');
+const castBtns=()=>{bar.innerHTML=st.map((p,i)=>`<button type="button" data-i="${i}"><b>${p.c.zh}</b> ${tr('c_'+p.c.id)}</button>`).join('');};castBtns();onLang.push(castBtns);
+const next=i=>{setAct(st[i],st[i].s+1);if(paused)draw();};
+bar.addEventListener('click',e=>{const b=e.target.closest('button');if(b)next(+b.dataset.i)});
+cv.addEventListener('click',e=>{const r=cv.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*W,y=(e.clientY-r.top)/r.height*H;
+  for(let i=st.length-1;i>=0;i--){const p=st[i],a=cur(p),[px,py]=p.c.pos;if(x>=px+6&&x<px+a.w-6&&y>=py+4&&y<py+p.c.clip){next(i);return;}}});
+const pp=document.getElementById('pp');
+const lab=()=>{pp.textContent=tr(paused?'play':'pause');pp.setAttribute('aria-pressed',paused);};lab();onLang.push(lab);
+pp.addEventListener('click',()=>{paused=!paused;lab();});
+}
+</script>
+
+<script>
+{
+const links=[
+ {t:'Portfolio',dk:'l_pf',z:'作',u:'#',k:'r'},
+ {t:'GitHub',dk:'l_gh',z:'碼',u:'https://github.com/Jumeanu',k:'g'}];
+const projects=[
+ {t:'WHAT TO DRINK BAR',dk:'p_bar',z:'飲',u:'#',k:'y'},
+ {tk:'p_ft',th:1,dk:'p_ftd',z:'星',soon:1,k:'p'},
+ {t:'Red Flag Analyzer',dk:'p_rf',z:'旗',soon:1,k:'t'}];
+
+const R=(d,n)=>Array.from({length:n},(_,i)=>`<path d="${d}" transform="rotate(${i*360/n} 24 24)"/>`).join('');
+const ORN={
+ '作':`<path class="o" d="M15 15A9 9 0 0 1 33 15A9 9 0 0 1 33 33A9 9 0 0 1 15 33A9 9 0 0 1 15 15Z"/><g class="f">${R('M24 12.5Q27.2 18.5 24 22Q20.8 18.5 24 12.5Z',4)}<circle cx="24" cy="24" r="1.7"/>${[[17,17],[31,17],[31,31],[17,31]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="1"/>`).join('')}</g>`,
+ '碼':`<g class="f">${R('M24 3.5Q28.4 15 24 20Q19.6 15 24 3.5Z',4)}</g><g class="o">${[45,135,225,315].map(a=>`<path d="M24 11Q27 16.5 24 20.5Q21 16.5 24 11Z" transform="rotate(${a} 24 24)"/>`).join('')}</g><g class="f"><circle cx="24" cy="24" r="2.4"/>${[45,135,225,315].map(a=>`<circle cx="24" cy="7.5" r="1.1" transform="rotate(${a} 24 24)"/>`).join('')}</g>`,
+ '飲':`<g class="o"><path d="M24 9Q30 19 24 33Q18 19 24 9Z"/><path d="M24 33Q14 30 12.5 18Q21 21 24 33Z"/><path d="M24 33Q34 30 35.5 18Q27 21 24 33Z"/><path d="M24 33Q10 34 5 25Q15 23 24 33Z"/><path d="M24 33Q38 34 43 25Q33 23 24 33Z"/><path d="M15 38.5Q24 35 33 38.5"/></g><g class="f"><circle cx="24" cy="5" r="1.2"/><circle cx="19" cy="7" r=".9"/><circle cx="29" cy="7" r=".9"/></g>`,
+ '星':`<g class="o"><path d="M24 3Q26.2 21.8 45 24Q26.2 26.2 24 45Q21.8 26.2 3 24Q21.8 21.8 24 3Z"/></g><g class="f"><path d="M24 11Q25.3 22.7 31.8 24Q25.3 25.3 24 37Q22.7 25.3 16.2 24Q22.7 22.7 24 11Z" transform="rotate(45 24 24)"/><circle cx="24" cy="24" r="2"/></g><g class="o"><circle cx="24" cy="24" r="12.5" stroke-dasharray="1.2 3.3"/></g>`,
+ '旗':`<g class="o">${R('M24 22C19.5 17 19 10 24 7C29 10 28.5 17 24 22Z',5)}</g><g class="f"><circle cx="24" cy="24" r="2.3"/>${[36,108,180,252,324].map(a=>`<circle cx="24" cy="15.5" r="1.1" transform="rotate(${a} 24 24)"/>`).join('')}</g>`};
+const orn=z=>`<svg class="orn" viewBox="0 0 48 48" aria-hidden="true">${ORN[z]}</svg>`;
+const lbl=x=>`<span class="lbl"><b${x.th&&LANG==='th'?' class="th"':''}>${x.tk?tr(x.tk):x.t}</b><small>${tr(x.dk)}</small></span>`;
+const item=x=>x.soon
+ ?`<div class="btn off ${x.k}">${orn(x.z)}${lbl(x)}<span class="soon">${tr('soon')}</span></div>`
+ :`<a class="btn ${x.k}" href="${x.u}" target="_blank" rel="noopener">${orn(x.z)}${lbl(x)}<span class="ar">→</span></a>`;
+const renderLinks=()=>{document.getElementById('links').innerHTML=links.map(item).join('');
+document.getElementById('projects').innerHTML=projects.map(item).join('');};renderLinks();onLang.push(renderLinks);
+const cp=document.getElementById('cp');
+cp.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.getElementById('em').textContent);cp.textContent=tr('copied')}catch(e){cp.textContent=tr('copyfail')}setTimeout(()=>cp.textContent=tr('copy'),1800);});
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+setLang(LANG);
+}
+</script>
+<script>
+{const ts=document.querySelector('.ts'),p=n=>String(n).padStart(2,'0');
+const clk=()=>{const d=new Date();ts.textContent=`${d.getFullYear()}.${p(d.getMonth()+1)}.${p(d.getDate())} · ${p(d.getHours())}:${p(d.getMinutes())}`;};
+clk();setInterval(clk,1000);}
+</script>
+</body>
+</html>
