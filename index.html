@@ -55,6 +55,7 @@ h2::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,#3fbf7a,
 .lbl{flex:1;display:grid;line-height:1.3}
 .lbl b{font:400 16px "Bungee"}.lbl b.th{font:600 17px "Mitr"}
 .lbl small{font-size:13px;opacity:.8}
+.mos{display:block;max-width:100%;height:auto;margin:2px 0 3px;shape-rendering:crispEdges;filter:blur(.4px)}
 .ar{font:400 18px "Bungee";color:var(--ln)}
 .soon{font:400 11px "Bungee";color:var(--ln);border:1px solid var(--ln);padding:2px 8px;border-radius:3px;white-space:nowrap}
 .btn.off{cursor:default;opacity:.85}.btn.off:hover{transform:none}
@@ -142,13 +143,13 @@ const I18N={
   sub:'คืนนี้ ดื่มกับเธอ',hint:'แตะตัวละครหรือปุ่มเพื่อเปลี่ยนท่า',pause:'หยุดอนิเมชัน',play:'เล่นอนิเมชัน',music:'เพลงคลอ',
   c_b5:'บาร์เทนเดอร์',c_p3:'นักเปียโน',c_s1:'นักร้อง',c_couple:'คู่รัก',c_meana:'ผู้หญิง',c_bf:'ผู้ชาย',pz:'หยุด',pl:'เล่น',
   l_pf:'รวมผลงานดีไซน์และระบบที่ทำ',l_gh:'โค้ดและโปรเจกต์เว็บ',p_bar:'ควิซ "วันนี้ดื่มอะไรดี?" ในบาร์พิกเซล',
-  p_ft:'เว็บดูดวง',p_ftd:'ไพ่ทาโรต์ + โหราศาสตร์ ฉากท้องฟ้าจริง',p_rf:'เล่าสถานการณ์ แล้วเว็บช่วยวิเคราะห์',soon:'SOON',
+  hid:'ชื่อยังเป็นความลับ',p_ftd:'ไพ่ทาโรต์ + โหราศาสตร์ ฉากท้องฟ้าจริง',p_rf:'เล่าสถานการณ์ แล้วเว็บช่วยวิเคราะห์',soon:'SOON',
   email:'อีเมล',copy:'คัดลอก',copied:'คัดลอกแล้ว ✓',copyfail:'คัดลอกเองนะ',foot:'ลิงก์ในหน้านี้ยังเป็นตัวอย่าง'},
  en:{scene:'A late-night Shanghai lounge in isometric pixel art: black-and-white marble checker floor, gold-trimmed walnut walls, a red leather bar with arched red-lit bottle cabinets, a Chinese lattice screen glowing green, a gold-framed stage with red velvet curtains and red lanterns, palms and ferns. Two lovers swing-dance under a spotlight, a bartender works the bar, a singer and a pianist play on stage. Neon signs read 美琳酒吧 and 今晚飲咩',
   sub:'Tonight, drinking with you.',hint:'Tap a character or a button to change the move',pause:'Pause animation',play:'Play animation',music:'Background music',
   c_b5:'Bartender',c_p3:'Pianist',c_s1:'Singer',c_couple:'Lovers',c_meana:'Lady',c_bf:'Gentleman',pz:'Pause',pl:'Play',
   l_pf:'Design work and systems I’ve built',l_gh:'Code and web projects',p_bar:'A "What should I drink tonight?" quiz in a pixel bar',
-  p_ft:'Fortune Site',p_ftd:'Tarot + astrology under a real night sky',p_rf:'Describe a situation and the site helps you read it',soon:'SOON',
+  hid:'Name under wraps',p_ftd:'Tarot + astrology under a real night sky',p_rf:'Describe a situation and the site helps you read it',soon:'SOON',
   email:'Email',copy:'Copy',copied:'Copied ✓',copyfail:'Copy it manually',foot:'Links on this page are placeholders for now'}};
 let LANG=(()=>{try{const l=localStorage.getItem('lang');return l==='en'?'en':'th'}catch(e){return 'th'}})();
 const tr=k=>I18N[LANG][k]??I18N.th[k];
@@ -234,8 +235,8 @@ const links=[
  {t:'GitHub',dk:'l_gh',z:'碼',u:'https://github.com/Jumeanu',k:'g'}];
 const projects=[
  {t:'WHAT TO DRINK BAR',dk:'p_bar',z:'飲',u:'./what-to-drink/',k:'y'},
- {tk:'p_ft',th:1,dk:'p_ftd',z:'星',soon:1,k:'p'},
- {t:'Red Flag Analyzer',dk:'p_rf',z:'旗',soon:1,k:'t'}];
+ {hid:[4,7,4],seed:7,dk:'p_ftd',z:'星',soon:1,k:'p'},
+ {hid:[3,4,8],seed:3,dk:'p_rf',z:'旗',soon:1,k:'t'}];
 
 const R=(d,n)=>Array.from({length:n},(_,i)=>`<path d="${d}" transform="rotate(${i*360/n} 24 24)"/>`).join('');
 const ORN={
@@ -245,7 +246,11 @@ const ORN={
  '星':`<g class="o"><path d="M24 3Q26.2 21.8 45 24Q26.2 26.2 24 45Q21.8 26.2 3 24Q21.8 21.8 24 3Z"/></g><g class="f"><path d="M24 11Q25.3 22.7 31.8 24Q25.3 25.3 24 37Q22.7 25.3 16.2 24Q22.7 22.7 24 11Z" transform="rotate(45 24 24)"/><circle cx="24" cy="24" r="2"/></g><g class="o"><circle cx="24" cy="24" r="12.5" stroke-dasharray="1.2 3.3"/></g>`,
  '旗':`<g class="o">${R('M24 22C19.5 17 19 10 24 7C29 10 28.5 17 24 22Z',5)}</g><g class="f"><circle cx="24" cy="24" r="2.3"/>${[36,108,180,252,324].map(a=>`<circle cx="24" cy="15.5" r="1.1" transform="rotate(${a} 24 24)"/>`).join('')}</g>`};
 const orn=z=>`<svg class="orn" viewBox="0 0 48 48" aria-hidden="true">${ORN[z]}</svg>`;
-const lbl=x=>`<span class="lbl"><b${x.th&&LANG==='th'?' class="th"':''}>${x.tk?tr(x.tk):x.t}</b><small>${tr(x.dk)}</small></span>`;
+/* mosaic for project names not released yet — the real name is not in this page */
+const mos=x=>{let r=x.seed*9301+49297,c=0,o='';const q=()=>(r=(r*9301+49297)%233280)/233280;
+ x.hid.forEach((w,i)=>{if(i)c++;for(let j=0;j<w*2;j++,c++)for(let y=0;y<3;y++){const v=q();o+=`<rect x="${c*6}" y="${y*6}" width="6" height="6" fill="${v<.45?'var(--ln)':'var(--fg)'}" opacity="${(.25+v*.6).toFixed(2)}"/>`;}});
+ return `<svg class="mos" viewBox="0 0 ${c*6} 18" width="${c*6}" height="18" role="img" aria-label="${tr('hid')}"><title>${tr('hid')}</title>${o}</svg>`;};
+const lbl=x=>`<span class="lbl">${x.hid?mos(x):`<b${x.th&&LANG==='th'?' class="th"':''}>${x.tk?tr(x.tk):x.t}</b>`}<small>${tr(x.dk)}</small></span>`;
 const item=x=>x.soon
  ?`<div class="btn off ${x.k}">${orn(x.z)}${lbl(x)}<span class="soon">${tr('soon')}</span></div>`
  :`<a class="btn ${x.k}" href="${x.u}" target="_blank" rel="noopener">${orn(x.z)}${lbl(x)}<span class="ar">→</span></a>`;
