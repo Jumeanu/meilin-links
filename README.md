@@ -7,14 +7,16 @@ Link page for MEILIN — a late-night Shanghai lounge in pixel art.
 
 - `what-to-drink/` — WHAT TO DRINK BAR · ควิซ "วันนี้ดื่มอะไรดี?" ในบาร์พิกเซล  
   A "What should I drink tonight?" quiz in a pixel bar.
+- `puifai-petspa/` — ปุยฝ้าย เพ็ทสปา · เดโมระบบจองคิวร้านอาบน้ำตัดขนสัตว์ (ร้านสมมติ) มีปุ่ม TH/EN  
+  Puifai Pet Spa — a booking-system demo for a fictional pet grooming shop, in Thai and English.
 
 ## © ลิขสิทธิ์ / Copyright
 
 © 2026 MEILIN. All rights reserved.
 
-ตัวละครพิกเซล ฉากบาร์ เพลง และรูปทั้งหมดในโฟลเดอร์ `assets/` และ `what-to-drink/` เป็นผลงานของ MEILIN
+ตัวละครพิกเซล ฉากบาร์ เพลง และรูปทั้งหมดในโฟลเดอร์ `assets/`, `what-to-drink/` และ `puifai-petspa/` เป็นผลงานของ MEILIN
 ห้ามคัดลอก ดัดแปลง นำไปใช้ซ้ำ หรือนำไปใช้เทรน AI โดยไม่ได้รับอนุญาต
 
-The pixel characters, bar scenes, music and every image in `assets/` and `what-to-drink/` are original work by MEILIN.
+The pixel characters, bar scenes, music and every image in `assets/`, `what-to-drink/` and `puifai-petspa/` are original work by MEILIN.
 They may not be copied, modified, reused or used to train AI models without written permission.
 Being able to view this repository does not grant any license.
