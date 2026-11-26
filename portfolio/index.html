@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meilin · Portfolio</title>
+<meta name="description" content="MEILIN 美琳 — selected design and web-system work">
+<meta name="robots" content="noai, noimageai">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Silkscreen&family=Mitr:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&text=美琳作品集焙浴一二" rel="stylesheet">
+<style>
+/* Same lounge as the links page: warm near-black, neon trims, Bungee labels + Mitr.
+   LAYOUT: header, then one large card per work (screenshot, story, highlights, stack, links). */
+:root{color-scheme:dark;--bg:#14100e;--card:#1f1915;--ink:#f3e9d8;--soft:#bfae98}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:#120c0b;color:var(--ink);font:16px/1.65 "Mitr",system-ui,sans-serif;font-weight:300;overflow-x:clip}
+a{color:inherit}
+.wrap{position:relative;max-width:900px;margin:0 auto;padding:clamp(22px,4vw,44px) max(4vw,16px) 56px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.back{font:400 13px "Bungee";color:#7fe3a8;text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 12px;border:1.5px solid #3fbf7a;border-radius:4px;background:#0d2a1e;box-shadow:0 0 12px -4px #3fbf7a}
+.back:hover,.back:focus-visible{box-shadow:0 0 18px -2px #3fbf7a;outline:none}
+.lang{display:flex;gap:6px}
+.lang button{font:400 13px "Bungee";min-width:44px;min-height:40px;padding:0 10px;border-radius:4px;border:1.5px solid #3fbf7a;background:#0d2a1e;color:#7fe3a8;cursor:pointer}
+.lang button[aria-pressed="true"]{background:#3fbf7a;color:#0d2a1e}
+button:focus-visible,a:focus-visible{outline:2px solid #e8b04a;outline-offset:2px}
+.hd{text-align:center;margin:28px 0 8px}
+.zh{font:900 22px/1 "Noto Serif TC",serif;color:#ff9cc8;letter-spacing:6px;text-shadow:0 0 10px rgba(255,140,190,.8)}
+.hd h1{margin:8px 0 0;font:400 clamp(40px,10vw,68px)/1 "Bungee";color:#ff5a4a;text-shadow:0 0 8px rgba(255,90,74,.9),0 0 26px rgba(255,60,40,.6);animation:fl 5s infinite}
+.hd p{margin:10px auto 0;max-width:46ch;color:var(--soft)}
+@keyframes fl{0%,90%,94%,100%{opacity:1}92%{opacity:.45}}
+.work{margin-top:40px;border-radius:8px;background:var(--bg);border:1.5px solid var(--ln);box-shadow:0 0 0 1px rgba(0,0,0,.4),0 0 28px -10px var(--ln);overflow:hidden}
+.c{--ln:#e0915e;--fg:#ffe6cf;--tint:#2b1a10}.t{--ln:#5fd3c4;--fg:#d6f4ef;--tint:#0e2629}
+.shots{display:grid;gap:2px;background:var(--ln)}
+.shots img{display:block;width:100%;height:auto;aspect-ratio:1200/750;object-fit:cover;background:#000}
+.shots.three{grid-template-columns:1fr 1fr}.shots.three img:first-child{grid-column:1/-1}
+.body{padding:clamp(18px,3.5vw,30px);background:linear-gradient(180deg,var(--tint),var(--bg) 70%)}
+.no{font:400 12px "Silkscreen",monospace;color:var(--ln);opacity:.85}
+.body h2{margin:4px 0 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font:400 clamp(24px,5vw,34px)/1.15 "Bungee";color:var(--fg);text-shadow:0 0 10px color-mix(in srgb,var(--ln) 60%,transparent)}
+.body h2 i{font:900 24px/1 "Noto Serif TC",serif;font-style:normal;color:var(--ln)}
+.kind{margin:6px 0 0;font-size:14px;color:var(--ln)}
+.desc{margin:14px 0 0;color:var(--ink);max-width:64ch}
+.hl{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.hl li{position:relative;padding-left:22px;color:var(--soft);font-size:15px}
+.hl li::before{content:"";position:absolute;left:4px;top:.72em;width:7px;height:7px;background:var(--ln);transform:rotate(45deg);box-shadow:0 0 6px var(--ln)}
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}
+.stack span{font:400 11px "Bungee";padding:3px 10px;border:1.5px solid var(--ln);color:var(--fg);border-radius:3px}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
+.act{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 18px;font:400 14px "Bungee";text-decoration:none;border-radius:4px;border:1.5px solid var(--ln);color:var(--fg);background:transparent;transition:transform .15s,box-shadow .15s}
+.act.main{background:var(--ln);color:#14100e}
+.act:hover,.act:focus-visible{transform:translateY(-2px);box-shadow:0 0 20px -4px var(--ln)}
+.note{margin:12px 0 0;font-size:13px;color:var(--soft);opacity:.85}
+.foot{margin-top:40px;text-align:center;color:var(--soft);font-size:14px}
+@media(prefers-reduced-motion:reduce){.hd h1{animation:none}.act{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="back" href="../"><span aria-hidden="true">←</span> MEILIN</a>
+    <div class="lang" role="group" aria-label="Language / ภาษา">
+      <button type="button" data-l="th">TH</button><button type="button" data-l="en">EN</button>
+    </div>
+  </div>
+
+  <header class="hd">
+    <div class="zh" lang="zh-Hant">作品集</div>
+    <h1>PORTFOLIO</h1>
+    <p data-i18n="lead">รวมผลงานดีไซน์และระบบเว็บที่ทำ ทุกชิ้นเปิดลองใช้งานจริงได้</p>
+  </header>
+
+  <article class="work c" aria-labelledby="w1">
+    <div class="shots three">
+      <img src="img/hearth-builder.jpg" width="1200" height="750" alt="" data-i18n-alt="a1">
+      <img src="img/hearth-bakery.jpg" width="1200" height="750" alt="" loading="lazy" data-i18n-alt="a2">
+      <img src="img/hearth-admin.jpg" width="1200" height="750" alt="" loading="lazy" data-i18n-alt="a3">
+    </div>
+    <div class="body">
+      <div class="no">01 · 2026</div>
+      <h2 id="w1"><i lang="zh-Hant">焙</i>HEARTH BAKEHOUSE</h2>
+      <p class="kind" data-i18n="k1">เว็บแอปร้านเบเกอรี่พรีออเดอร์ · ร้านสมมติ</p>
+      <p class="desc" data-i18n="d1"></p>
+      <ul class="hl" data-i18n-list="h1"></ul>
+      <div class="stack"><span>React</span><span>Vite</span><span>Tailwind</span><span>Framer Motion</span><span>SVG</span><span>LocalStorage</span></div>
+      <div class="acts">
+        <a class="act main" href="../hearth-bakery/" target="_blank" rel="noopener"><span data-i18n="open">เปิดเดโม</span> <span aria-hidden="true">→</span></a>
+        <a class="act" href="https://github.com/Jumeanu/Hearth_Bakery" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="note" data-i18n="n1"></p>
+    </div>
+  </article>
+
+  <article class="work t" aria-labelledby="w2">
+    <div class="shots">
+      <img src="img/puifai.jpg" width="1200" height="750" alt="" loading="lazy" data-i18n-alt="a4">
+    </div>
+    <div class="body">
+      <div class="no">02 · 2026</div>
+      <h2 id="w2"><i lang="zh-Hant">浴</i><span data-i18n="t2">PUIFAI PET SPA</span></h2>
+      <p class="kind" data-i18n="k2">ระบบจองคิวร้านอาบน้ำตัดขนสัตว์ · ร้านสมมติ</p>
+      <p class="desc" data-i18n="d2"></p>
+      <ul class="hl" data-i18n-list="h2"></ul>
+      <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Pixel art</span><span>LocalStorage</span></div>
+      <div class="acts">
+        <a class="act main" href="../puifai-petspa/" target="_blank" rel="noopener"><span data-i18n="open">เปิดเดโม</span> <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </article>
+
+  <p class="foot">© 2026 MEILIN · <span data-i18n="foot">ห้ามคัดลอกหรือนำไปใช้โดยไม่ได้รับอนุญาต</span></p>
+</div>
+
+<script>
+const I18N = {
+  th: {
+    lead: 'รวมผลงานดีไซน์และระบบเว็บที่ทำ ทุกชิ้นเปิดลองใช้งานจริงได้',
+    open: 'เปิดเดโม',
+    k1: 'เว็บแอปร้านเบเกอรี่พรีออเดอร์ · ร้านสมมติ',
+    d1: 'ลูกค้าไม่ได้กรอกฟอร์มสั่งขนม แต่ “สร้าง” ขนมของตัวเองทีละขั้น เลื่อนหน้าจอแล้วเห็นเค้ก ครัวซองต์ หรือซาวร์โดว์ค่อย ๆ ประกอบขึ้นตรงหน้า ต่อด้วยตะกร้า ชำระเงินผ่าน QR ติดตามออเดอร์ และข้อความแจ้งเตือนแบบ LINE OA ครบในเว็บเดียว',
+    h1: [
+      'ขนม 9 ชนิด แต่ละชนิดมีขั้นตอนและแอนิเมชันของตัวเอง เช่น พับเนยครัวซองต์ กรีดหน้าซาวร์โดว์',
+      'ตัวเลือกทั้งหมดมาจาก schema เดียว เพิ่มขนมใหม่ได้โดยไม่ต้องเขียนหน้าใหม่ ราคาคำนวณทันที',
+      'เขียนข้อความบนเค้กได้ ทั้งบีบบนครีมหรือบนแผ่นช็อกโกแลต',
+      'หลังร้านสำหรับคนอบ: ตรวจสลิป เปลี่ยนสถานะ สรุปการผลิตรายวัน โควตา และรอบรับสินค้า',
+      'สองภาษา ไทย/อังกฤษ รองรับมือถือ และลดแอนิเมชันตามการตั้งค่าเครื่อง',
+    ],
+    n1: 'เดโมเก็บข้อมูลในเบราว์เซอร์ของผู้ชมเท่านั้น ลองสั่ง ลองเปลี่ยนสถานะได้เต็มที่ · ปุ่ม “คนอบ” ด้านบนคือหน้าหลังร้าน',
+    t2: 'PUIFAI PET SPA',
+    k2: 'ระบบจองคิวร้านอาบน้ำตัดขนสัตว์ · ร้านสมมติ',
+    d2: 'เว็บจองคิวสำหรับร้านสปาน้องหมาน้องแมว เริ่มจากเลือกน้องตามไซซ์น้ำหนัก แล้วเลือกบริการ วัน และเวลา ตัวละครพิกเซลวาดเองทั้งหมด',
+    h2: [
+      'เลือกน้องแบบหมุนได้ ลากเพื่อหมุน แตะเพื่อเลือก',
+      'ตารางร้านและการจองคิว พร้อมหน้าแก้ไขเนื้อหาเว็บสำหรับเจ้าของร้าน',
+      'สองภาษา ไทย/อังกฤษ',
+    ],
+    a1: 'Hearth: ขั้นตอนเขียนข้อความบนเค้ก มีพรีวิวเค้กพร้อมแผ่นช็อกโกแลต',
+    a2: 'Hearth: หน้าเลือกเบเกอรี่ 9 ชนิด',
+    a3: 'Hearth: หน้าสรุปการผลิตของคนอบ',
+    a4: 'Puifai Pet Spa: หน้าแรกพร้อมตัวละครน้องหมาน้องแมวพิกเซล',
+    foot: 'ห้ามคัดลอกหรือนำไปใช้โดยไม่ได้รับอนุญาต',
+  },
+  en: {
+    lead: 'Selected design and web-system work. Every piece is a working demo.',
+    open: 'Open demo',
+    k1: 'Pre-order bakery web app · fictional shop',
+    d1: 'Customers don’t fill in an order form — they build their bake step by step. As they scroll, a cake, croissant or sourdough comes together on screen. Then cart, QR payment with slip upload, order tracking and LINE-OA-style notifications, all in one site.',
+    h1: [
+      'Nine bakes, each with its own steps and animation — laminating a croissant, scoring a sourdough',
+      'Every option comes from one schema: add a new bake without building a new page; prices update live',
+      'Messages on cakes, piped on the cream or written on a chocolate plaque',
+      'Baker back office: verify slips, move orders along, daily production summary, quotas and pickup rounds',
+      'Thai and English, mobile-first, and calmer motion when the device asks for it',
+    ],
+    n1: 'The demo keeps data in the viewer’s own browser, so feel free to order and change statuses. The “Baker” button at the top opens the back office.',
+    t2: 'PUIFAI PET SPA',
+    k2: 'Booking system for a pet grooming shop · fictional shop',
+    d2: 'A booking site for a dog-and-cat spa. Pick your pet by weight class, then a service, a day and a time. Every pixel character is drawn by hand.',
+    h2: [
+      'A pet picker you can spin: drag to rotate, tap to choose',
+      'Shop schedule and booking, plus a content editor for the shop owner',
+      'Thai and English',
+    ],
+    a1: 'Hearth: the cake message step with a live cake preview and chocolate plaque',
+    a2: 'Hearth: choosing one of nine bakes',
+    a3: 'Hearth: the baker’s production summary',
+    a4: 'Puifai Pet Spa: home page with pixel-art dogs and cats',
+    foot: 'Not to be copied or reused without permission',
+  },
+};
+// shares the links page's language setting
+let LANG = (() => { try { return localStorage.getItem('lang') === 'en' ? 'en' : 'th' } catch (e) { return 'th' } })();
+function setLang(l) {
+  LANG = l;
+  try { localStorage.setItem('lang', l) } catch (e) {}
+  document.documentElement.lang = l;
+  const d = I18N[l];
+  document.querySelectorAll('[data-i18n]').forEach(e => { e.textContent = d[e.dataset.i18n] });
+  document.querySelectorAll('[data-i18n-alt]').forEach(e => { e.alt = d[e.dataset.i18nAlt] });
+  document.querySelectorAll('[data-i18n-list]').forEach(ul => {
+    ul.replaceChildren(...d[ul.dataset.i18nList].map(t => { const li = document.createElement('li'); li.textContent = t; return li }));
+  });
+  document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.l === l));
+}
+document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.l)));
+setLang(LANG);
+</script>
+</body>
+</html>

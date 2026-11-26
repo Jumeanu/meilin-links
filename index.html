@@ -142,13 +142,13 @@ const I18N={
  th:{scene:'เลานจ์บาร์เซี่ยงไฮ้ยามดึกแบบพิกเซลอาร์ตมุมไอโซเมตริก: พื้นหินอ่อนลายตารางขาวดำ ผนังไม้วอลนัทขอบทอง บาร์หนังแดงกับตู้ขวดซุ้มโค้งไฟแดง ฉากฉลุจีนแสงเขียว เวทีม่านกำมะหยี่แดงกรอบทองกับโคมแดง ต้นปาล์มและเฟิร์น คู่รักเต้นสวิงกลางห้องใต้สปอตไลต์ บาร์เทนเดอร์หลังบาร์ นักร้องกับนักเปียโนบนเวที ป้าย 美琳酒吧 และ 今晚飲咩',
   sub:'คืนนี้ ดื่มกับเธอ',hint:'แตะตัวละครหรือปุ่มเพื่อเปลี่ยนท่า',pause:'หยุดอนิเมชัน',play:'เล่นอนิเมชัน',music:'เพลงคลอ',
   c_b5:'บาร์เทนเดอร์',c_p3:'นักเปียโน',c_s1:'นักร้อง',c_couple:'คู่รัก',c_meana:'ผู้หญิง',c_bf:'ผู้ชาย',pz:'หยุด',pl:'เล่น',
-  l_pf:'รวมผลงานดีไซน์และระบบที่ทำ',l_gh:'โค้ดและโปรเจกต์เว็บ',p_bar:'ควิซ "วันนี้ดื่มอะไรดี?" ในบาร์พิกเซล',p_hb:'เบเกอรี่พรีออเดอร์ ออกแบบขนมได้เอง',
+  l_pf:'รวมผลงานดีไซน์และระบบที่ทำ',l_gh:'โค้ดและโปรเจกต์เว็บ',p_bar:'ควิซ "วันนี้ดื่มอะไรดี?" ในบาร์พิกเซล',
   hid:'ชื่อยังเป็นความลับ',p_ftd:'ไพ่ทาโรต์ + โหราศาสตร์ ฉากท้องฟ้าจริง',p_rf:'เล่าสถานการณ์ แล้วเว็บช่วยวิเคราะห์',soon:'SOON',
   email:'อีเมล',copy:'คัดลอก',copied:'คัดลอกแล้ว ✓',copyfail:'คัดลอกเองนะ',foot:'ขอบคุณที่แวะมานะ'},
  en:{scene:'A late-night Shanghai lounge in isometric pixel art: black-and-white marble checker floor, gold-trimmed walnut walls, a red leather bar with arched red-lit bottle cabinets, a Chinese lattice screen glowing green, a gold-framed stage with red velvet curtains and red lanterns, palms and ferns. Two lovers swing-dance under a spotlight, a bartender works the bar, a singer and a pianist play on stage. Neon signs read 美琳酒吧 and 今晚飲咩',
   sub:'Tonight, drinking with you.',hint:'Tap a character or a button to change the move',pause:'Pause animation',play:'Play animation',music:'Background music',
   c_b5:'Bartender',c_p3:'Pianist',c_s1:'Singer',c_couple:'Lovers',c_meana:'Lady',c_bf:'Gentleman',pz:'Pause',pl:'Play',
-  l_pf:'Design work and systems I’ve built',l_gh:'Code and web projects',p_bar:'A "What should I drink tonight?" quiz in a pixel bar',p_hb:'A pre-order bakery where you build your own bake, step by step',
+  l_pf:'Design work and systems I’ve built',l_gh:'Code and web projects',p_bar:'A "What should I drink tonight?" quiz in a pixel bar',
   hid:'Name under wraps',p_ftd:'Tarot + astrology under a real night sky',p_rf:'Describe a situation and the site helps you read it',soon:'SOON',
   email:'Email',copy:'Copy',copied:'Copied ✓',copyfail:'Copy it manually',foot:'Thanks for stopping by'}};
 let LANG=(()=>{try{const l=localStorage.getItem('lang');return l==='en'?'en':'th'}catch(e){return 'th'}})();
@@ -231,11 +231,10 @@ pp.addEventListener('click',()=>{paused=!paused;lab();});
 <script>
 {
 const links=[
- {t:'Portfolio',dk:'l_pf',z:'作',u:'./puifai-petspa/',k:'r'},
+ {t:'Portfolio',dk:'l_pf',z:'作',u:'./portfolio/',k:'r'},
  {t:'GitHub',dk:'l_gh',z:'碼',u:'https://github.com/Jumeanu',k:'g'}];
 const projects=[
  {t:'WHAT TO DRINK BAR',dk:'p_bar',z:'飲',u:'./what-to-drink/',k:'y'},
- {t:'HEARTH BAKEHOUSE',dk:'p_hb',z:'焙',u:'./hearth-bakery/',k:'c'},
  {hid:[4,7,4],seed:7,dk:'p_ftd',z:'星',soon:1,k:'p'},
  {hid:[3,4,8],seed:3,dk:'p_rf',z:'旗',soon:1,k:'t'}];
 
